@@ -51,6 +51,7 @@ Paster is  **100% free and open source**! We believe in making productivity tool
   <table>
     <tr>
       <td align="center" width="30%" style="background-color: #FFF7E8; border: 1px solid #FDD835; border-radius: 10px; padding: 15px;">
+        <img src="https://raw.githubusercontent.com/ArioMoniri/Paster/e423eccd52e1e91677e91f013bf1f408db39f88d/Clipboard%20Animated%20Icon.gif" alt="Core Features" width="50"/>
         <h3>Core Features</h3>
         <ul align="left">
           <li>📋 Clipboard Monitoring & Detection</li>
@@ -60,6 +61,7 @@ Paster is  **100% free and open source**! We believe in making productivity tool
         </ul>
       </td>
       <td align="center" width="30%" style="background-color: #FFF7E8; border: 1px solid #FDD835; border-radius: 10px; padding: 15px;">
+        <img src="https://raw.githubusercontent.com/ArioMoniri/Paster/e423eccd52e1e91677e91f013bf1f408db39f88d/Bullseye%20Animated%20Icon.gif" alt="Coming Soon" width="50"/>
         <h3>Coming Soon</h3>
         <ul align="left">
           <li>🔄 Cross-device Clipboard Sync</li>
