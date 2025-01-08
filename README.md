@@ -76,6 +76,9 @@ We'd love your help in making Paster even better! Here's how you can contribute:
 2. **Report Issues**
    - Found a bug? [Open an issue](https://github.com/ArioMoniri/Paster/issues)
    - Have a feature request? We'd love to hear it!
+   - [Submit a Bug Report](.github/ISSUE_TEMPLATE/bug_report.md)
+   - [Request a Feature](.github/ISSUE_TEMPLATE/feature_request.md)
+   - [Submit a Pull Request](.github/pull_request.md)
 
 3. **Spread the Word**
    - Star the repository if you find it useful
