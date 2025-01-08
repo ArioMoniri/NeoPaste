@@ -18,7 +18,7 @@ Watch Paster in action:
 
 ## ✨ Completely Free!
 
-Paster is and will always be **100% free and open source**! We believe in making productivity tools accessible to everyone.
+Paster is  **100% free and open source**! We believe in making productivity tools accessible to everyone.
 
 > 🎉 **Coming Soon to the Mac App Store!** We're working on bringing Paster to the Mac App Store for even easier installation and updates.
 
@@ -51,7 +51,6 @@ Paster is and will always be **100% free and open source**! We believe in making
   <table>
     <tr>
       <td align="center" width="30%" style="background-color: #FFF7E8; border: 1px solid #FDD835; border-radius: 10px; padding: 15px;">
-        <img src="https://raw.githubusercontent.com/ArioMoniri/Paster/main/path/to/core-icon.png" alt="Core Features" width="50"/>
         <h3>Core Features</h3>
         <ul align="left">
           <li>📋 Clipboard Monitoring & Detection</li>
@@ -61,7 +60,6 @@ Paster is and will always be **100% free and open source**! We believe in making
         </ul>
       </td>
       <td align="center" width="30%" style="background-color: #FFF7E8; border: 1px solid #FDD835; border-radius: 10px; padding: 15px;">
-        <img src="https://raw.githubusercontent.com/ArioMoniri/Paster/main/path/to/coming-soon-icon.png" alt="Coming Soon" width="50"/>
         <h3>Coming Soon</h3>
         <ul align="left">
           <li>🔄 Cross-device Clipboard Sync</li>
@@ -71,7 +69,6 @@ Paster is and will always be **100% free and open source**! We believe in making
         </ul>
       </td>
       <td align="center" width="30%" style="background-color: #FFF7E8; border: 1px solid #FDD835; border-radius: 10px; padding: 15px;">
-        <img src="https://raw.githubusercontent.com/ArioMoniri/Paster/main/path/to/planned-icon.png" alt="Planned Features" width="50"/>
         <h3>Planned Features</h3>
         <ul align="left">
           <li>🎨 Advanced Format Options</li>
