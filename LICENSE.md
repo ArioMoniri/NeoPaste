@@ -16,4 +16,4 @@ limitations under the License.
 
 The "Paster" name, logo, and branding are trademarks of Ariorad Moniri. Unauthorized use of these trademarks, including but not limited to commercial use, is strictly prohibited without explicit permission. For details, see the [Trademark Policy](TRADEMARK.md).
 
-Unless otherwise noted, all images in this repository are licensed under the same terms as the code provided under the Apache License 2.0.
+All images in this repository are copyrighted by Ariorad Moniri. Unauthorized use or redistribution is prohibited.
