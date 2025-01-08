@@ -23,14 +23,6 @@ Paster is and will always be **100% free and open source**! We believe in making
 > 🎉 **Coming Soon to the Mac App Store!** We're working on bringing Paster to the Mac App Store for even easier installation and updates.
 
 
-## ✨ License Considerations
-
-Paster is released under the **Apache License 2.0**, which means:
-- You are free to use, modify, and distribute the app.
-- Any modifications or derivative works must retain proper attribution and include the same license.
-- Contributions to the project will be considered part of the Apache 2.0 License.
-
-For more details, see the [LICENSE.md](LICENSE.md) file.
 
 ## 🚀 Key Features
 
@@ -88,6 +80,15 @@ We'd love your help in making Paster even better! Here's how you can contribute:
 3. **Spread the Word**
    - Star the repository if you find it useful
    - Share with your friends and colleagues
+  
+# ✨ License Considerations
+
+Paster is released under the **Apache License 2.0**, which means:
+- You are free to use, modify, and distribute the app.
+- Any modifications or derivative works must retain proper attribution and include the same license.
+- Contributions to the project will be considered part of the Apache 2.0 License.
+
+For more details, see the [LICENSE.md](LICENSE.md) file.
 
 ## 🔧 Development
 
