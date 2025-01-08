@@ -43,7 +43,7 @@ Paster is  **100% free and open source**! We believe in making productivity tool
 - macOS 13.0 or later
 - Apple Silicon or Intel processor
 
-# Development Roadmap 📜
+## Development Roadmap 📜
 
 > Here's what we're working on to make **Paster** even better for you. Your feedback helps shape our priorities!
 
