@@ -40,7 +40,7 @@ Paster is and will always be **100% free and open source**! We believe in making
 5. Start saving clipboard content instantly!
 
 ### System Requirements
-- macOS 12.0 or later
+- macOS 13.0 or later
 - Apple Silicon or Intel processor
 
 ## 📝 Roadmap
@@ -91,20 +91,33 @@ Paster is released under the **Apache License 2.0**, which means:
 - Any modifications or derivative works must retain proper attribution and include the same license.
 - Contributions to the project will be considered part of the Apache 2.0 License.
 
-For more details, see the [LICENSE.md](LICENSE.md) file.
+For more details, see the [LICENSE](LICENSE) and [LICENSE.md](LICENSE.md) files.
 
 ## 🔧 Development
 
 Paster is built using:
-- SwiftUI for the user interface
-- MASShortcut for global keyboard shortcut handling
-- Native macOS APIs for clipboard management
+- **SwiftUI**: For the user interface, providing a modern and intuitive design.
+- **HotKey**: For handling global keyboard shortcuts seamlessly.
+- **Native macOS APIs**: To manage clipboard functionality efficiently.
+- **ZipFoundation**: To enable file compression and decompression functions.
 
 ### Building from Source
 1. Clone the repository
 2. Open the project in Xcode
 3. Install dependencies using Swift Package Manager
 4. Build and run
+
+
+## 📝 Documentation Links
+
+Here are links to all supporting documentation for the project:
+- [Changelog](CHANGELOG.md): View the history of updates and changes.
+- [Contributing Guidelines](CONTRIBUTING.md): Learn how to contribute to the project.
+- [Code of Conduct](CODE_OF_CONDUCT.md): Community standards for behavior.
+- [Trademark Policy](TRADEMARK.md): Guidelines for using the project's name, logo, and branding.
+- [Roadmap](ROADMAP.md): See the project's plans for future development.
+- [Security Policy](SECURITY.md): Report vulnerabilities and view security practices.
+- [Support Information](SUPPORT.md): Get help and find support resources.
 
 ## 👨‍💻 About the Developer
 
