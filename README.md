@@ -1,3 +1,9 @@
+[![CLA assistant](https://cla-assistant.io/readme/badge/ArioMoniri/Paster)](https://cla-assistant.io/ArioMoniri/Paster)
+
+
+
+
+
 # Paster 📋
 
 > Save Code Snippets & Images Instantly on macOS
