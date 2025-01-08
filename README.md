@@ -132,7 +132,8 @@ Have ideas for new features or improvements? I'd love to hear from you!
 📧 [ariorad.moniri@live.acibadem.edu.tr](mailto:ariorad.moniri@live.acibadem.edu.tr)
 
 ## 📄 License
-Apache License 2.0 - see [LICENSE.md](LICENSE.md) for details.
+Apache License 2.0 - see [LICENSE](LICENSE) for details.
+Please also check the [LICENSE.md](LICENSE.md) file.
 
 ---
 <p align="center">
