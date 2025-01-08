@@ -1,35 +1,35 @@
-[![CLA assistant](https://cla-assistant.io/readme/badge/ArioMoniri/Paster)](https://cla-assistant.io/ArioMoniri/Paster)
-![macOS Build Check](https://github.com/ArioMoniri/Paster/actions/workflows/build-check.yml/badge.svg)
-![License](https://img.shields.io/github/license/ArioMoniri/Paster)
-![Downloads](https://img.shields.io/github/downloads/ArioMoniri/Paster/total)
+[![CLA assistant](https://cla-assistant.io/readme/badge/ArioMoniri/NeoPaste)](https://cla-assistant.io/ArioMoniri/NeoPaste)
+![macOS Build Check](https://github.com/ArioMoniri/NeoPaste/actions/workflows/build-check.yml/badge.svg)
+![License](https://img.shields.io/github/license/ArioMoniri/NeoPaste)
+![Downloads](https://img.shields.io/github/downloads/ArioMoniri/NeoPaste/total)
 
 
 
 
 
-# Paster 📋
+# NeoPaste 📋
 
 > Save Code Snippets & Images Instantly on macOS
 
-Paster is a lightweight macOS app that makes saving clipboard content a breeze. Whether it's code snippets, images, or any other content - just press your keyboard shortcut and it's saved as a file wherever you want. No complex setup, just instant saving.
+NeoPaste is a lightweight macOS app that makes saving clipboard content a breeze. Whether it's code snippets, images, or any other content - just press your keyboard shortcut and it's saved as a file wherever you want. No complex setup, just instant saving.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ArioMoniri/Paster/4bc184bdf3735f9bf58ce12736cc87458434949d/Sleek%20Glossy%20macOS.png" alt="Paster Icon" width="200"/>
+  <img src="https://raw.githubusercontent.com/ArioMoniri/NeoPaste/4bc184bdf3735f9bf58ce12736cc87458434949d/Sleek%20Glossy%20macOS.png" alt="NeoPaste Icon" width="200"/>
 </p>
 
 ## 🎬 Demo
 
-Watch Paster in action:
+Watch NeoPaste in action:
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ArioMoniri/Paster/09482ebbdb24eddfcf9e8708ee742c8778f489c8/Screen%20Recording%20Jan%207%202025.gif" alt="Paster Demo" width="600"/>
+  <img src="https://raw.githubusercontent.com/ArioMoniri/NeoPaste/09482ebbdb24eddfcf9e8708ee742c8778f489c8/Screen%20Recording%20Jan%207%202025.gif" alt="NeoPaste Demo" width="600"/>
 </p>
 
 ## ✨ Completely Free!
 
-Paster is  **100% free and open source**! We believe in making productivity tools accessible to everyone.
+NeoPaste is  **100% free and open source**! We believe in making productivity tools accessible to everyone.
 
-> 🎉 **Coming Soon to the Mac App Store!** We're working on bringing Paster to the Mac App Store for even easier installation and updates.
+> 🎉 **Coming Soon to the Mac App Store!** We're working on bringing NeoPaste to the Mac App Store for even easier installation and updates.
 
 
 
@@ -42,9 +42,9 @@ Paster is  **100% free and open source**! We believe in making productivity tool
 
 ## 🎯 Getting Started
 
-1. Download the latest release from the [releases page](https://github.com/ArioMoniri/Paster/releases)
-2. Move Paster to your Applications folder
-3. Launch Paster
+1. Download the latest release from the [releases page](https://github.com/ArioMoniri/NeoPaste/releases)
+2. Move NeoPaste to your Applications folder
+3. Launch NeoPaste
 4. Set your preferred keyboard shortcut
 5. Start saving clipboard content instantly!
 
@@ -54,14 +54,14 @@ Paster is  **100% free and open source**! We believe in making productivity tool
 
 ## Development Roadmap 📜
 
-> Here's what we're working on to make **Paster** even better for you. Your feedback helps shape our priorities!
+> Here's what we're working on to make **NeoPaste** even better for you. Your feedback helps shape our priorities!
 
 <div align="center">
   <table>
     <tr>
       <td align="center" width="30%" style="background-color: #FFF7E8; border: 1px solid #FDD835; border-radius: 10px; padding: 15px;">
         <picture>
-        <source srcset="https://raw.githubusercontent.com/ArioMoniri/Paster/e423eccd52e1e91677e91f013bf1f408db39f88d/Clipboard%20Animated%20Icon.gif" media="(prefers-color-scheme: light)">
+        <source srcset="https://raw.githubusercontent.com/ArioMoniri/NeoPaste/e423eccd52e1e91677e91f013bf1f408db39f88d/Clipboard%20Animated%20Icon.gif" media="(prefers-color-scheme: light)">
         <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="" width="40" style="margin-bottom: -10px;">
         </picture>
         <h3 style="margin-top: 5px;">Core Features</h3>
@@ -74,7 +74,7 @@ Paster is  **100% free and open source**! We believe in making productivity tool
       </td>
       <td align="center" width="30%" style="background-color: #FFF7E8; border: 1px solid #FDD835; border-radius: 10px; padding: 15px;">
         <picture>
-        <source srcset="https://raw.githubusercontent.com/ArioMoniri/Paster/e423eccd52e1e91677e91f013bf1f408db39f88d/Bullseye%20Animated%20Icon.gif" media="(prefers-color-scheme: light)">
+        <source srcset="https://raw.githubusercontent.com/ArioMoniri/NeoPaste/e423eccd52e1e91677e91f013bf1f408db39f88d/Bullseye%20Animated%20Icon.gif" media="(prefers-color-scheme: light)">
         <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="" width="40" style="margin-bottom: -10px;">>
         </picture>
         <h3 style="margin-top: 5px;">Coming Soon</h3>
@@ -87,7 +87,7 @@ Paster is  **100% free and open source**! We believe in making productivity tool
       </td>
       <td align="center" width="30%" style="background-color: #FFF7E8; border: 1px solid #FDD835; border-radius: 10px; padding: 15px;">
         <picture>
-        <source srcset="https://raw.githubusercontent.com/ArioMoniri/Paster/2f1433b103499397bac3e07f14e81271bad83a9b/Lightning%20Icon.gif" media="(prefers-color-scheme: light)">
+        <source srcset="https://raw.githubusercontent.com/ArioMoniri/NeoPaste/2f1433b103499397bac3e07f14e81271bad83a9b/Lightning%20Icon.gif" media="(prefers-color-scheme: light)">
         <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="" width="40" style="margin-bottom: -10px;">
         </picture>
         <h3 style="margin-top: 5px;">Planned Features</h3>
@@ -104,7 +104,7 @@ Paster is  **100% free and open source**! We believe in making productivity tool
 
 ## 🤝 Contributing
 
-We'd love your help in making Paster even better! Here's how you can contribute:
+We'd love your help in making NeoPaste even better! Here's how you can contribute:
 
 1. **Fork the Repository**
    - Create your feature branch (`git checkout -b feature/AmazingFeature`)
@@ -113,7 +113,7 @@ We'd love your help in making Paster even better! Here's how you can contribute:
    - Open a Pull Request
 
 2. **Report Issues**
-   - Found a bug? [Open an issue](https://github.com/ArioMoniri/Paster/issues)
+   - Found a bug? [Open an issue](https://github.com/ArioMoniri/NeoPaste/issues)
    - Have a feature request? We'd love to hear it!
    - [Submit a Bug Report](.github/ISSUE_TEMPLATE/bug_report.md)
    - [Request a Feature](.github/ISSUE_TEMPLATE/feature_request.md)
@@ -125,7 +125,7 @@ We'd love your help in making Paster even better! Here's how you can contribute:
   
 ### ✨ License Considerations
 
-Paster is released under the **Apache License 2.0**, which means:
+NeoPaste is released under the **Apache License 2.0**, which means:
 - You are free to use, modify, and distribute the app.
 - Any modifications or derivative works must retain proper attribution and include the same license.
 - Contributions to the project will be considered part of the Apache 2.0 License.
@@ -134,7 +134,7 @@ For more details, see the [LICENSE](LICENSE) and [LICENSE.md](LICENSE.md) files.
 
 ## 🔧 Development
 
-Paster is built using:
+NeoPaste is built using:
 - **SwiftUI**: For the user interface, providing a modern and intuitive design.
 - **HotKey**: For handling global keyboard shortcuts seamlessly.
 - **Native macOS APIs**: To manage clipboard functionality efficiently.
