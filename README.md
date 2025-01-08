@@ -155,7 +155,7 @@ Hi! I'm Ario Moniri, a medical student and research fellow passionate about brid
 
 ### Connect with Me
 - GitHub: [@ArioMoniri](https://github.com/ArioMoniri)
-- Twitter: [@FuckStress00](https://twitter.com/FuckStress00)
+- X (Twitter): [@FuckStress00](https://twitter.com/FuckStress00)
 
 ### Share Your Ideas & Feedback! ✨
 Have ideas for new features or improvements? I'd love to hear from you!
