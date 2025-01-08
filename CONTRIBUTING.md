@@ -36,7 +36,7 @@ git push origin feature/YourFeatureName
 '''
 
 ### 7. Open a Pull Request
-- Submit your pull request to the `main` branch.
+- Submit your pull request to the `develop` branch.
 - Provide a clear and concise description of your changes.
 - Mention any related issues or feature requests.
 
@@ -47,6 +47,7 @@ git push origin feature/YourFeatureName
 By contributing to this project, you agree that:
 1. Your contributions will be licensed under the **Apache License 2.0**.
 2. You have the right to grant this license for your contributions.
+3. You acknowledge that the trademarks of "Paster" (including the name, logo, and branding) remain the exclusive property of Ariorad Moniri and cannot be used without explicit permission.
 
 ---
 
