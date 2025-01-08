@@ -45,9 +45,12 @@ git push origin feature/YourFeatureName
 ## Contributor License Agreement (CLA)
 
 By contributing to this project, you agree that:
-1. Your contributions will be licensed under the **Apache License 2.0**.
-2. You have the right to grant this license for your contributions.
-3. You acknowledge that the trademarks of "Paster" (including the name, logo, and branding) remain the exclusive property of Ariorad Moniri and cannot be used without explicit permission.
+1.	Your contributions are governed by the terms of the CLA you signed via the CLA assistant.
+2. Your contributions will be licensed under the **Apache License 2.0**.
+3. You have the right to grant this license for your contributions.
+4. You acknowledge that the trademarks of "Paster" (including the name, logo, and branding) remain the exclusive property of Ariorad Moniri and cannot be used without explicit permission.
+
+Contributors will be prompted to sign the CLA before their first contribution is accepted. For more information, see the [CLA assistant documentation](https://cla-assistant.io/).
 
 ---
 
