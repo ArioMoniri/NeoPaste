@@ -1,4 +1,3 @@
-
 # Apache License 2.0
 
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +12,8 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
-## Trademark Clause
+## Additional Terms: Trademark Clause
 
 The "Paster" name, logo, and branding are trademarks of Ariorad Moniri. Unauthorized use of these trademarks, including but not limited to commercial use, is strictly prohibited without explicit permission. For details, see the [Trademark Policy](TRADEMARK.md).
+
+Unless otherwise noted, all images in this repository are licensed under the same terms as the code provided under the Apache License 2.0.
