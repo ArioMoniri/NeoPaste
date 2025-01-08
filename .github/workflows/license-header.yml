@@ -2,9 +2,15 @@ name: Add License Header
 
 on:
   push:
+    branches:
+      - main
+      - develop
     paths:
       - "**/*.swift"
   pull_request:
+    branches:
+      - main
+      - develop
     paths:
       - "**/*.swift"
 
