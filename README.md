@@ -62,7 +62,7 @@ Paster is  **100% free and open source**! We believe in making productivity tool
       <td align="center" width="30%" style="background-color: #FFF7E8; border: 1px solid #FDD835; border-radius: 10px; padding: 15px;">
         <picture>
         <source srcset="https://raw.githubusercontent.com/ArioMoniri/Paster/e423eccd52e1e91677e91f013bf1f408db39f88d/Clipboard%20Animated%20Icon.gif" media="(prefers-color-scheme: light)">
-        <img src="" alt="Core Features" width="40" style="margin-bottom: -10px;"/>
+        <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="" width="40" style="margin-bottom: -10px;">
         </picture>
         <h3 style="margin-top: 5px;">Core Features</h3>
         <ul align="left">
@@ -75,7 +75,7 @@ Paster is  **100% free and open source**! We believe in making productivity tool
       <td align="center" width="30%" style="background-color: #FFF7E8; border: 1px solid #FDD835; border-radius: 10px; padding: 15px;">
         <picture>
         <source srcset="https://raw.githubusercontent.com/ArioMoniri/Paster/e423eccd52e1e91677e91f013bf1f408db39f88d/Bullseye%20Animated%20Icon.gif" media="(prefers-color-scheme: light)">
-        <img src="" alt="Core Features" width="40" style="margin-bottom: -10px;"/>
+        <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="" width="40" style="margin-bottom: -10px;">>
         </picture>
         <h3 style="margin-top: 5px;">Coming Soon</h3>
         <ul align="left">
@@ -88,7 +88,7 @@ Paster is  **100% free and open source**! We believe in making productivity tool
       <td align="center" width="30%" style="background-color: #FFF7E8; border: 1px solid #FDD835; border-radius: 10px; padding: 15px;">
         <picture>
         <source srcset="https://raw.githubusercontent.com/ArioMoniri/Paster/2f1433b103499397bac3e07f14e81271bad83a9b/Lightning%20Icon.gif" media="(prefers-color-scheme: light)">
-        <img src="" alt="Core Features" width="40" style="margin-bottom: -10px;"/>
+        <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="" width="40" style="margin-bottom: -10px;">
         </picture>
         <h3 style="margin-top: 5px;">Planned Features</h3>
         <ul align="left">
