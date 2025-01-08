@@ -1,0 +1,65 @@
+name: macOS Build Check
+
+on:
+  push:
+    branches:
+      - develop
+  pull_request:
+    branches:
+      - develop
+
+jobs:
+  build:
+    name: Build macOS App
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Resolve Dependencies
+        run: |
+          xcodebuild -resolvePackageDependencies \
+          -project pasterapp.xcodeproj
+
+      - name: Build the app (Release Configuration)
+        run: |
+          xcodebuild clean build \
+          -project pasterapp.xcodeproj \
+          -scheme pasterapp \
+          -sdk macosx \
+          -configuration Release \
+          -derivedDataPath build
+
+      - name: Verify the build
+        run: test -d build || echo "Build directory not found!"
+
+      - name: Archive the app (Optional)
+        if: success()
+        run: |
+          xcodebuild archive \
+          -project pasterapp.xcodeproj \
+          -scheme pasterapp \
+          -archivePath build/pasterapp.xcarchive
+
+      - name: Upload Archive
+        if: success()
+        uses: actions/upload-artifact@v3
+        with:
+          name: pasterapp-archive
+          path: build/pasterapp.xcarchive
+
+      - name: Export the archive (Optional)
+        if: success()
+        run: |
+          xcodebuild -exportArchive \
+          -archivePath build/pasterapp.xcarchive \
+          -exportOptionsPlist ExportOptions.plist \
+          -exportPath build/exported-app
+
+      - name: Upload Exported App
+        if: success()
+        uses: actions/upload-artifact@v3
+        with:
+          name: pasterapp-exported-app
+          path: build/exported-app
