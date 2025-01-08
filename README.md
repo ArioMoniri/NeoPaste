@@ -81,7 +81,7 @@ We'd love your help in making Paster even better! Here's how you can contribute:
    - Star the repository if you find it useful
    - Share with your friends and colleagues
   
-# ✨ License Considerations
+### ✨ License Considerations
 
 Paster is released under the **Apache License 2.0**, which means:
 - You are free to use, modify, and distribute the app.
