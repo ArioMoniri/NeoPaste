@@ -1,6 +1,8 @@
 [![CLA assistant](https://cla-assistant.io/readme/badge/ArioMoniri/Paster)](https://cla-assistant.io/ArioMoniri/Paster)
 ![macOS Build Check](https://github.com/ArioMoniri/Paster/actions/workflows/build-check.yml/badge.svg)
 ![License](https://img.shields.io/github/license/ArioMoniri/Paster)
+![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen)
+![Downloads](https://img.shields.io/github/downloads/ArioMoniri/Paster/total)
 
 
 
