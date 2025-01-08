@@ -69,7 +69,7 @@ Paster is  **100% free and open source**! We believe in making productivity tool
         </ul>
       </td>
       <td align="center" width="30%" style="background-color: #FFF7E8; border: 1px solid #FDD835; border-radius: 10px; padding: 15px;">
-        <img src="https://raw.githubusercontent.com/ArioMoniri/Paster/main/path/to/planned-features.gif](https://raw.githubusercontent.com/ArioMoniri/Paster/2f1433b103499397bac3e07f14e81271bad83a9b/Lightning%20Icon.gif" alt="Planned Features" width="50"/>
+        <img src="https://raw.githubusercontent.com/ArioMoniri/Paster/2f1433b103499397bac3e07f14e81271bad83a9b/Lightning%20Icon.gif" alt="Planned Features" width="50"/>
         <h3>Planned Features</h3>
         <ul align="left">
           <li>🎨 Advanced Format Options</li>
