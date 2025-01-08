@@ -1,0 +1,33 @@
+name: Add License Header
+
+on:
+  push:
+    paths:
+      - "**/*.swift"
+  pull_request:
+    paths:
+      - "**/*.swift"
+
+jobs:
+  add-license-header:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install Python (for script)
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Add license header
+        run: python .github/scripts/add_license_header.py
+
+      - name: Commit changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "Add license header to new or modified files" || echo "No changes to commit"
+          git push
