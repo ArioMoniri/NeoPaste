@@ -1,4 +1,5 @@
 [![CLA assistant](https://cla-assistant.io/readme/badge/ArioMoniri/Paster)](https://cla-assistant.io/ArioMoniri/Paster)
+![macOS Build Check](https://github.com/ArioMoniri/Paster/actions/workflows/build-check.yml/badge.svg)
 
 
 
