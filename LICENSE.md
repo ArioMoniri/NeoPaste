@@ -16,7 +16,7 @@ This project uses **CLA assistant** to manage Contributor License Agreements. Co
 ---
 
 ## Additional Terms: Trademark Clause
-The "Paster" name, logo, and branding are trademarks of Ariorad Moniri. Unauthorized use of these trademarks, including but not limited to commercial use, is strictly prohibited without explicit permission. For details, refer to the Trademark Policy.
+The "NeoPaste" name, logo, and branding are trademarks of Ariorad Moniri. Unauthorized use of these trademarks, including but not limited to commercial use, is strictly prohibited without explicit permission. For details, refer to the Trademark Policy.
 
 ---
 
