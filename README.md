@@ -43,25 +43,46 @@ Paster is and will always be **100% free and open source**! We believe in making
 - macOS 13.0 or later
 - Apple Silicon or Intel processor
 
-## 📝 Roadmap
+# Development Roadmap 📜
 
-### Core Features (Available Now)
-- Clipboard Monitoring & Detection
-- Multi-format Content Support
-- Instant File Saving
-- Format Conversion
+> Here's what we're working on to make **Paster** even better for you. Your feedback helps shape our priorities!
 
-### Coming Soon
-- Cross-device Clipboard Sync
-- Compression Support
-- Save Location Selection
-- Preview Functionality
-
-### Planned Features
-- Advanced Format Options
-- Custom Save Paths
-- Quick Preview Mode
-- Enhanced File Management
+<div align="center">
+  <table>
+    <tr>
+      <td align="center" width="30%" style="background-color: #FFF7E8; border: 1px solid #FDD835; border-radius: 10px; padding: 15px;">
+        <img src="https://raw.githubusercontent.com/ArioMoniri/Paster/main/path/to/core-icon.png" alt="Core Features" width="50"/>
+        <h3>Core Features</h3>
+        <ul align="left">
+          <li>📋 Clipboard Monitoring & Detection</li>
+          <li>📂 Multi-format Content Support</li>
+          <li>💾 Instant File Saving</li>
+          <li>🔄 Format Conversion</li>
+        </ul>
+      </td>
+      <td align="center" width="30%" style="background-color: #FFF7E8; border: 1px solid #FDD835; border-radius: 10px; padding: 15px;">
+        <img src="https://raw.githubusercontent.com/ArioMoniri/Paster/main/path/to/coming-soon-icon.png" alt="Coming Soon" width="50"/>
+        <h3>Coming Soon</h3>
+        <ul align="left">
+          <li>🔄 Cross-device Clipboard Sync</li>
+          <li>💾 Compression Support</li>
+          <li>📂 Save Location Selection</li>
+          <li>🔍 Preview Functionality</li>
+        </ul>
+      </td>
+      <td align="center" width="30%" style="background-color: #FFF7E8; border: 1px solid #FDD835; border-radius: 10px; padding: 15px;">
+        <img src="https://raw.githubusercontent.com/ArioMoniri/Paster/main/path/to/planned-icon.png" alt="Planned Features" width="50"/>
+        <h3>Planned Features</h3>
+        <ul align="left">
+          <li>🎨 Advanced Format Options</li>
+          <li>📂 Custom Save Paths</li>
+          <li>🔍 Quick Preview Mode</li>
+          <li>📂 Enhanced File Management</li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+</div>
 
 ## 🤝 Contributing
 
