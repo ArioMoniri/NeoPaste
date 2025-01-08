@@ -57,12 +57,19 @@ By contributing to this project, you agree that:
 - Provide a detailed description of the issue.
 - Include steps to reproduce the problem.
 - Mention the operating system and app version.
+- Use the [Bug Report Template](.github/ISSUE_TEMPLATE/bug_report.md) to submit bugs.
 
 ### Feature Requests
 - Clearly describe the feature you’d like to see.
 - Explain why it’s beneficial and how it could be implemented.
-
+- Use the [Feature Request Template](.github/ISSUE_TEMPLATE/feature_request.md) to propose new features.
+  
 [Open an Issue](https://github.com/ArioMoniri/Paster/issues)
+
+
+### Submitting Pull Requests
+- Follow the [Pull Request Template](.github/pull_request.md) when submitting a PR.
+
 
 ---
 
