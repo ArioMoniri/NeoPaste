@@ -40,6 +40,23 @@ NeoPaste is  **100% free and open source**! We believe in making productivity to
 - **💻 Code & Image Support**: Perfect for saving code snippets, screenshots, and any other clipboard content as files
 - **📂 Save Anywhere**: Choose any location on your Mac to save your snippets and images
 
+## 🛡️ Privacy & Security
+
+At NeoPaste, your privacy and security are our top priorities. Here's how we ensure your data stays safe:
+
+1. **No Clipboard Data Storage**  
+   NeoPaste **does not store or log your clipboard data**. All clipboard content is processed locally on your Mac, and once saved as a file, no record of it is kept within the app.
+
+2. **No Outbound Internet Access**  
+   To safeguard your privacy, NeoPaste **does not access the internet**. This eliminates any risk of clipboard content being sent or exposed online.
+
+3. **Hardened Runtime & Notarization**  
+   NeoPaste is built with the macOS **Hardened Runtime** enabled and is **notarized by Apple**. This ensures that the app is secure, free of malicious code, and fully compliant with macOS security standards.
+
+> 🚨 **Transparency Commitment:** NeoPaste is 100% open source, so you can inspect the code yourself on [GitHub](https://github.com/ArioMoniri/NeoPaste) to verify these claims.
+
+If you have any concerns or questions about privacy, feel free to [open an issue](https://github.com/ArioMoniri/NeoPaste/issues) or contact me directly.
+
 ## 🎯 Getting Started
 
 1. Download the latest release from the [releases page](https://github.com/ArioMoniri/NeoPaste/releases)
