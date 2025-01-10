@@ -9,6 +9,7 @@
 
 # NeoPaste 📋
 
+[![Download NeoPaste](https://img.shields.io/badge/Download-App-blue?style=for-the-badge&logo=apple)](https://github.com/ArioMoniri/NeoPaste/releases)
 > Save Code Snippets & Images Instantly on macOS
 
 NeoPaste is a lightweight macOS app that makes saving clipboard content a breeze. Whether it's code snippets, images, or any other content - just press your keyboard shortcut and it's saved as a file wherever you want. No complex setup, just instant saving.
