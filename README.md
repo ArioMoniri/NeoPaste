@@ -196,6 +196,13 @@ Here are links to all supporting documentation for the project:
 
 Hi! I'm Ario Moniri, a medical student and research fellow passionate about bridging medicine and technology. With experience in both wet and dry lab environments and expertise in bioinformatics, I enjoy developing web and macOS applications that solve real-world problems.
 
+### ☕ Support My Work
+
+Love what I do? Your support means the world! ❤️  
+Click below to buy me a coffee and keep me fueled for more projects!  
+
+[![☕ Buy Me A Coffee](https://img.shields.io/badge/☕-Buy%20Me%20A%20Coffee-orange?style=for-the-badge)](https://buymeacoffee.com/ariomoniri)
+
 ### Connect with Me
 - GitHub: [@ArioMoniri](https://github.com/ArioMoniri)
 - X (Twitter): [@FuckStress00](https://twitter.com/FuckStress00)
