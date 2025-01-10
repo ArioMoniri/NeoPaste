@@ -1,7 +1,8 @@
 [![CLA assistant](https://cla-assistant.io/readme/badge/ArioMoniri/NeoPaste)](https://cla-assistant.io/ArioMoniri/neopaste)
 ![macOS Build Check](https://github.com/ArioMoniri/neopaste/actions/workflows/build-check.yml/badge.svg)
 ![License](https://img.shields.io/github/license/ArioMoniri/neopaste)
-![Downloads](https://img.shields.io/github/downloads/ArioMoniri/neopaste/total)
+[![Download NeoPaste](https://img.shields.io/badge/Download-NeoPaste.dmg-blue?style=for-the-badge&logo=apple)](https://github.com/ArioMoniri/NeoPaste/raw/d4deb6b62c66a287d79c30dc9eb4594a910116cf/NeoPaste%201.0.dmg)
+
 
 
 
