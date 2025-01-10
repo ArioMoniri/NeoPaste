@@ -58,6 +58,19 @@ At NeoPaste, your privacy and security are our top priorities. Here's how we ens
 
 If you have any concerns or questions about privacy, feel free to [open an issue](https://github.com/ArioMoniri/NeoPaste/issues) or contact me directly.
 
+
+## 🛠️ Download NeoPaste
+
+Get the latest version of NeoPaste directly:
+
+[![Download NeoPaste](https://img.shields.io/badge/Download-NeoPaste.dmg-blue?style=for-the-badge&logo=apple)](https://github.com/ArioMoniri/NeoPaste/raw/d4deb6b62c66a287d79c30dc9eb4594a910116cf/NeoPaste%201.0.dmg)
+
+### Installation Steps:
+1. Click the button above to download the `.dmg` file.
+2. Move NeoPaste to your Applications folder.
+3. Launch NeoPaste and set your preferred keyboard shortcut.
+4. Start saving clipboard content instantly!
+
 ## 🎯 Getting Started
 
 1. Download the latest release from the [releases page](https://github.com/ArioMoniri/NeoPaste/releases)
