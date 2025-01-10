@@ -1,0 +1,629 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		05EAD6AA2D2BEB3F00FDF0A3 /* ZIPFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = 05EAD6A92D2BEB3F00FDF0A3 /* ZIPFoundation */; };
+		05EAD6AD2D2BEB5E00FDF0A3 /* HotKey in Frameworks */ = {isa = PBXBuildFile; productRef = 05EAD6AC2D2BEB5E00FDF0A3 /* HotKey */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		05EAD6712D2BEA3C00FDF0A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 05EAD6572D2BEA3B00FDF0A3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 05EAD65E2D2BEA3B00FDF0A3;
+			remoteInfo = pasterapp;
+		};
+		05EAD67B2D2BEA3C00FDF0A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 05EAD6572D2BEA3B00FDF0A3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 05EAD65E2D2BEA3B00FDF0A3;
+			remoteInfo = pasterapp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		05EAD65F2D2BEA3B00FDF0A3 /* NeoPaste.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NeoPaste.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		05EAD6702D2BEA3C00FDF0A3 /* NeoPasteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NeoPasteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		05EAD67A2D2BEA3C00FDF0A3 /* NeoPasteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NeoPasteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		05EAD7252D313F4900FDF0A3 /* Exceptions for "NeoPaste" folder in "NeoPaste" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 05EAD65E2D2BEA3B00FDF0A3 /* NeoPaste */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		05EAD6612D2BEA3B00FDF0A3 /* NeoPaste */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				05EAD7252D313F4900FDF0A3 /* Exceptions for "NeoPaste" folder in "NeoPaste" target */,
+			);
+			path = NeoPaste;
+			sourceTree = "<group>";
+		};
+		05EAD6732D2BEA3C00FDF0A3 /* NeoPasteTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = NeoPasteTests;
+			sourceTree = "<group>";
+		};
+		05EAD67D2D2BEA3C00FDF0A3 /* NeoPasteUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = NeoPasteUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		05EAD65C2D2BEA3B00FDF0A3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05EAD6AD2D2BEB5E00FDF0A3 /* HotKey in Frameworks */,
+				05EAD6AA2D2BEB3F00FDF0A3 /* ZIPFoundation in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05EAD66D2D2BEA3C00FDF0A3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05EAD6772D2BEA3C00FDF0A3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		05EAD6562D2BEA3B00FDF0A3 = {
+			isa = PBXGroup;
+			children = (
+				05EAD6612D2BEA3B00FDF0A3 /* NeoPaste */,
+				05EAD6732D2BEA3C00FDF0A3 /* NeoPasteTests */,
+				05EAD67D2D2BEA3C00FDF0A3 /* NeoPasteUITests */,
+				05EAD6602D2BEA3B00FDF0A3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		05EAD6602D2BEA3B00FDF0A3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				05EAD65F2D2BEA3B00FDF0A3 /* NeoPaste.app */,
+				05EAD6702D2BEA3C00FDF0A3 /* NeoPasteTests.xctest */,
+				05EAD67A2D2BEA3C00FDF0A3 /* NeoPasteUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		05EAD65E2D2BEA3B00FDF0A3 /* NeoPaste */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 05EAD6842D2BEA3C00FDF0A3 /* Build configuration list for PBXNativeTarget "NeoPaste" */;
+			buildPhases = (
+				05EAD65B2D2BEA3B00FDF0A3 /* Sources */,
+				05EAD65C2D2BEA3B00FDF0A3 /* Frameworks */,
+				05EAD65D2D2BEA3B00FDF0A3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				05EAD6612D2BEA3B00FDF0A3 /* NeoPaste */,
+			);
+			name = NeoPaste;
+			packageProductDependencies = (
+				05EAD6A92D2BEB3F00FDF0A3 /* ZIPFoundation */,
+				05EAD6AC2D2BEB5E00FDF0A3 /* HotKey */,
+			);
+			productName = pasterapp;
+			productReference = 05EAD65F2D2BEA3B00FDF0A3 /* NeoPaste.app */;
+			productType = "com.apple.product-type.application";
+		};
+		05EAD66F2D2BEA3C00FDF0A3 /* NeoPasteTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 05EAD6872D2BEA3C00FDF0A3 /* Build configuration list for PBXNativeTarget "NeoPasteTests" */;
+			buildPhases = (
+				05EAD66C2D2BEA3C00FDF0A3 /* Sources */,
+				05EAD66D2D2BEA3C00FDF0A3 /* Frameworks */,
+				05EAD66E2D2BEA3C00FDF0A3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				05EAD6722D2BEA3C00FDF0A3 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				05EAD6732D2BEA3C00FDF0A3 /* NeoPasteTests */,
+			);
+			name = NeoPasteTests;
+			packageProductDependencies = (
+			);
+			productName = pasterappTests;
+			productReference = 05EAD6702D2BEA3C00FDF0A3 /* NeoPasteTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		05EAD6792D2BEA3C00FDF0A3 /* NeoPasteUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 05EAD68A2D2BEA3C00FDF0A3 /* Build configuration list for PBXNativeTarget "NeoPasteUITests" */;
+			buildPhases = (
+				05EAD6762D2BEA3C00FDF0A3 /* Sources */,
+				05EAD6772D2BEA3C00FDF0A3 /* Frameworks */,
+				05EAD6782D2BEA3C00FDF0A3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				05EAD67C2D2BEA3C00FDF0A3 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				05EAD67D2D2BEA3C00FDF0A3 /* NeoPasteUITests */,
+			);
+			name = NeoPasteUITests;
+			packageProductDependencies = (
+			);
+			productName = pasterappUITests;
+			productReference = 05EAD67A2D2BEA3C00FDF0A3 /* NeoPasteUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		05EAD6572D2BEA3B00FDF0A3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					05EAD65E2D2BEA3B00FDF0A3 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					05EAD66F2D2BEA3C00FDF0A3 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 05EAD65E2D2BEA3B00FDF0A3;
+					};
+					05EAD6792D2BEA3C00FDF0A3 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 05EAD65E2D2BEA3B00FDF0A3;
+					};
+				};
+			};
+			buildConfigurationList = 05EAD65A2D2BEA3B00FDF0A3 /* Build configuration list for PBXProject "NeoPaste" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 05EAD6562D2BEA3B00FDF0A3;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				05EAD6A82D2BEB3F00FDF0A3 /* XCRemoteSwiftPackageReference "ZIPFoundation" */,
+				05EAD6AB2D2BEB5E00FDF0A3 /* XCRemoteSwiftPackageReference "HotKey" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 05EAD6602D2BEA3B00FDF0A3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				05EAD65E2D2BEA3B00FDF0A3 /* NeoPaste */,
+				05EAD66F2D2BEA3C00FDF0A3 /* NeoPasteTests */,
+				05EAD6792D2BEA3C00FDF0A3 /* NeoPasteUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		05EAD65D2D2BEA3B00FDF0A3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05EAD66E2D2BEA3C00FDF0A3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05EAD6782D2BEA3C00FDF0A3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		05EAD65B2D2BEA3B00FDF0A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05EAD66C2D2BEA3C00FDF0A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05EAD6762D2BEA3C00FDF0A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		05EAD6722D2BEA3C00FDF0A3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 05EAD65E2D2BEA3B00FDF0A3 /* NeoPaste */;
+			targetProxy = 05EAD6712D2BEA3C00FDF0A3 /* PBXContainerItemProxy */;
+		};
+		05EAD67C2D2BEA3C00FDF0A3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 05EAD65E2D2BEA3B00FDF0A3 /* NeoPaste */;
+			targetProxy = 05EAD67B2D2BEA3C00FDF0A3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		05EAD6822D2BEA3C00FDF0A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		05EAD6832D2BEA3C00FDF0A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		05EAD6852D2BEA3C00FDF0A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"ASSETCATALOG_COMPILER_APPICON_NAME[sdk=macosx*]" = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = NeoPaste/NeoPaste.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"NeoPaste/Preview Content\"";
+				DEVELOPMENT_TEAM = FF68N39FU5;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "/Users/ario/Downloads/app of paster/pasterapp/NeoPaste/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = NeoPaste;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Falcon.NeoPaste;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		05EAD6862D2BEA3C00FDF0A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"ASSETCATALOG_COMPILER_APPICON_NAME[sdk=macosx*]" = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = NeoPaste/NeoPasteRelease.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"NeoPaste/Preview Content\"";
+				DEVELOPMENT_TEAM = FF68N39FU5;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "/Users/ario/Downloads/app of paster/pasterapp/NeoPaste/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = NeoPaste;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Falcon.NeoPaste;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		05EAD6882D2BEA3C00FDF0A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FF68N39FU5;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = arm.Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NeoPaste.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/NeoPaste";
+			};
+			name = Debug;
+		};
+		05EAD6892D2BEA3C00FDF0A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FF68N39FU5;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = arm.Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NeoPaste.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/NeoPaste";
+			};
+			name = Release;
+		};
+		05EAD68B2D2BEA3C00FDF0A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FF68N39FU5;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = arm.pasterappUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = pasterapp;
+			};
+			name = Debug;
+		};
+		05EAD68C2D2BEA3C00FDF0A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FF68N39FU5;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = arm.NeoPasteUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = pasterapp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		05EAD65A2D2BEA3B00FDF0A3 /* Build configuration list for PBXProject "NeoPaste" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05EAD6822D2BEA3C00FDF0A3 /* Debug */,
+				05EAD6832D2BEA3C00FDF0A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		05EAD6842D2BEA3C00FDF0A3 /* Build configuration list for PBXNativeTarget "NeoPaste" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05EAD6852D2BEA3C00FDF0A3 /* Debug */,
+				05EAD6862D2BEA3C00FDF0A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		05EAD6872D2BEA3C00FDF0A3 /* Build configuration list for PBXNativeTarget "NeoPasteTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05EAD6882D2BEA3C00FDF0A3 /* Debug */,
+				05EAD6892D2BEA3C00FDF0A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		05EAD68A2D2BEA3C00FDF0A3 /* Build configuration list for PBXNativeTarget "NeoPasteUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05EAD68B2D2BEA3C00FDF0A3 /* Debug */,
+				05EAD68C2D2BEA3C00FDF0A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		05EAD6A82D2BEB3F00FDF0A3 /* XCRemoteSwiftPackageReference "ZIPFoundation" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/weichsel/ZIPFoundation.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.19;
+			};
+		};
+		05EAD6AB2D2BEB5E00FDF0A3 /* XCRemoteSwiftPackageReference "HotKey" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/soffes/HotKey.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		05EAD6A92D2BEB3F00FDF0A3 /* ZIPFoundation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 05EAD6A82D2BEB3F00FDF0A3 /* XCRemoteSwiftPackageReference "ZIPFoundation" */;
+			productName = ZIPFoundation;
+		};
+		05EAD6AC2D2BEB5E00FDF0A3 /* HotKey */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 05EAD6AB2D2BEB5E00FDF0A3 /* XCRemoteSwiftPackageReference "HotKey" */;
+			productName = HotKey;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 05EAD6572D2BEA3B00FDF0A3 /* Project object */;
+}

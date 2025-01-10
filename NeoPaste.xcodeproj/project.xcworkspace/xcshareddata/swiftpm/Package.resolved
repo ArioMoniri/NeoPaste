@@ -1,0 +1,24 @@
+{
+  "originHash" : "86538c4510b32cd3ffd90a92432a7e8a415ac3d68643b9bf5499768fd2b0d7fa",
+  "pins" : [
+    {
+      "identity" : "hotkey",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/soffes/HotKey.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "a3cf605d7a96f6ff50e04fcb6dea6e2613cfcbe4"
+      }
+    },
+    {
+      "identity" : "zipfoundation",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/weichsel/ZIPFoundation.git",
+      "state" : {
+        "revision" : "02b6abe5f6eef7e3cbd5f247c5cc24e246efcfe0",
+        "version" : "0.9.19"
+      }
+    }
+  ],
+  "version" : 3
+}
