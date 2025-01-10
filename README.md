@@ -49,7 +49,7 @@ NeoPaste is  **100% free and open source**! We believe in making productivity to
 5. Start saving clipboard content instantly!
 
 ### System Requirements
-- macOS 13.0 or later
+- macOS 14.0 or later
 - Apple Silicon or Intel processor
 
 ## Development Roadmap 📜
