@@ -16,7 +16,9 @@
 NeoPaste is a lightweight macOS app that makes saving clipboard content a breeze. Whether it's code snippets, images, or any other content - just press your keyboard shortcut and it's saved as a file wherever you want. No complex setup, just instant saving.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ArioMoniri/NeoPaste/4bc184bdf3735f9bf58ce12736cc87458434949d/Sleek%20Glossy%20macOS.png" alt="NeoPaste Icon" width="200"/>
+  <a href="https://github.com/ArioMoniri/NeoPaste/raw/d4deb6b62c66a287d79c30dc9eb4594a910116cf/NeoPaste%201.0.dmg">
+    <img src="https://raw.githubusercontent.com/ArioMoniri/NeoPaste/4bc184bdf3735f9bf58ce12736cc87458434949d/Sleek%20Glossy%20macOS.png" alt="NeoPaste Icon" width="200"/>
+  </a>
 </p>
 
 ## 🎬 Demo
