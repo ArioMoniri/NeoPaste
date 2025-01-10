@@ -2,6 +2,7 @@
 ![macOS Build Check](https://github.com/ArioMoniri/neopaste/actions/workflows/build-check.yml/badge.svg)
 ![License](https://img.shields.io/github/license/ArioMoniri/neopaste)
 ![Downloads](https://img.shields.io/github/downloads/ArioMoniri/NeoPaste/total)
+[![Downloads](https://img.shields.io/github/downloads/ArioMoniri/NeoPaste/total)](https://github.com/ArioMoniri/NeoPaste/releases)
 
 
 
