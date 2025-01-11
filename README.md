@@ -1,4 +1,6 @@
+
 <div align="center">
+  
 [![CLA assistant](https://cla-assistant.io/readme/badge/ArioMoniri/NeoPaste)](https://cla-assistant.io/ArioMoniri/neopaste)
 ![License](https://img.shields.io/github/license/ArioMoniri/neopaste)
 [![Total Downloads](https://img.shields.io/github/downloads/ArioMoniri/NeoPaste/total)](https://github.com/ArioMoniri/NeoPaste/releases)
@@ -8,6 +10,7 @@
 ![GitHub contributors](https://img.shields.io/github/contributors/ArioMoniri/NeoPaste)
 ![GitHub](https://img.shields.io/badge/Localized-Available-brightgreen)
 ![Website](https://img.shields.io/website?url=https://neopaste.replit.app/)
+
 </div>
 
 
