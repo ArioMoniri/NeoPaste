@@ -66,7 +66,9 @@ At NeoPaste, your privacy and security are our top priorities. Here's how we ens
 
 If you have any concerns or questions about privacy, feel free to [open an issue](https://github.com/ArioMoniri/NeoPaste/issues) or contact me directly.
 
-
+> **Note**  
+You can help translate this application into your own language! This is an essential step in making NeoPaste accessible to everyone, regardless of their English proficiency. Learn how to contribute by visiting the [Translating NeoPaste](##🌍-translating-neopaste) section.
+> 
 ## 🛠️ Download NeoPaste
 
 Get the latest version of NeoPaste directly:
@@ -185,6 +187,43 @@ NeoPaste is built using:
 3. Install dependencies using Swift Package Manager
 4. Build and run
 
+
+## 🌍 Translating NeoPaste
+
+### Help Translate NeoPaste into Your Language!
+
+You can make NeoPaste accessible to a wider audience by translating it into your native language. This effort is crucial in ensuring that everyone, regardless of their English proficiency, can benefit from NeoPaste’s features. 
+
+### How to Contribute
+
+Open the link below to start contributing translations for NeoPaste. You’ll need a Crowdin account, which you can easily create or link to your GitHub account.
+
+To help improve NeoPaste's [website](https://neopaste.replit.app) and make it accessible globally, please contribute to its translation via the link below:
+
+👉 [Translate the NeoPaste Website](https://crowdin.com/project/neopaste)
+
+---
+
+
+### Important Notes Before You Start Translating
+
+1. **HTML Tags**  
+   Some strings may contain **HTML tags** (e.g., `<strong>` or `<span>`). Please respect the formatting and copy the tags exactly as they appear in the source text. Modifying or omitting these tags can break the rendering on the website.
+2. **Special Character Codes**  
+   Certain strings include **special character codes** like `&#8984;` (⌘) or `&RightArrowBar;` (⇥). These codes are essential for proper rendering and accessibility. Hover over them in Crowdin to see what they represent, and ensure they are copied exactly as shown, including the semicolon at the end.
+3. **Non-Breaking Spaces**  
+   Some strings use **non-breaking spaces** (`&nbsp;`) between words. These are used to prevent unwanted line breaks and maintain proper formatting. Do not replace these with regular spaces; use them as they appear in the source string.
+4. **Escaping Quotation Marks**  
+   Strings containing **quotation marks** (`"`, `'`) may require escaping with a backslash (`\`) to prevent rendering or runtime errors. Ensure these are escaped properly in your translations.
+
+
+### 📝 Pro Tips for Translating
+
+- Click on tags in Crowdin to paste them directly into your translation.
+- Pay close attention to special characters, tags, and formatting in the source text.
+- Avoid introducing new HTML tags or removing the existing ones.
+
+Your contributions are highly valued, and they make NeoPaste more accessible for users worldwide! 🌐✨
 
 ## 📝 Documentation Links
 
