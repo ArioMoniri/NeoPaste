@@ -17,16 +17,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Resolve Dependencies
-        run: |
-          xcodebuild -resolvePackageDependencies \
-          -project pasterapp.xcodeproj
-
       - name: Build the app (Release Configuration)
         run: |
           xcodebuild clean build \
-          -project pasterapp.xcodeproj \
-          -scheme pasterapp \
+          -project NeoPaste.xcodeproj \
+          -scheme NeoPaste \
           -sdk macosx \
           -configuration Release \
           -derivedDataPath build
@@ -38,16 +33,31 @@ jobs:
         if: success()
         run: |
           xcodebuild archive \
-          -project pasterapp.xcodeproj \
-          -scheme pasterapp \
-          -archivePath build/pasterapp.xcarchive
+          -project NeoPaste.xcodeproj \
+          -scheme NeoPaste \
+          -archivePath build/NeoPaste.xcarchive
 
       - name: Upload Archive
         if: success()
         uses: actions/upload-artifact@v3
         with:
-          name: pasterapp-archive
-          path: build/pasterapp.xcarchive
+          name: NeoPaste-archive
+          path: build/NeoPaste.xcarchive
+
+      - name: Export the archive (Optional)
+        if: success()
+        run: |
+          xcodebuild -exportArchive \
+          -archivePath build/NeoPaste.xcarchive \
+          -exportOptionsPlist ExportOptions.plist \
+          -exportPath build/exported-app
+
+      - name: Upload Exported App
+        if: success()
+        uses: actions/upload-artifact@v3
+        with:
+          name: NeoPaste-exported-app
+          path: build/exported-app
 
       - name: Export the archive (Optional)
         if: success()
