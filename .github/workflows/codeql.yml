@@ -33,13 +33,14 @@ jobs:
         with:
           languages: ${{ matrix.language }}
 
-      # Resolve dependencies using Swift Package Manager
-      - name: Resolve dependencies
-        run: swift package resolve
-
-      # Build the Swift project using Swift Package Manager
-      - name: Build the project using Swift Package Manager
-        run: swift build -c debug
+      # Build the project using Xcode
+      - name: Build the project using Xcode
+        run: |
+          xcodebuild clean build \
+          -project NeoPaste.xcodeproj \
+          -scheme NeoPaste \
+          -sdk macosx \
+          -configuration Debug
 
       # Run CodeQL Analysis
       - name: Perform CodeQL Analysis
