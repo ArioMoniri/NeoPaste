@@ -10,21 +10,26 @@
 
 
 
+<br><br>
 
-
-
-# NeoPaste 📋
-
-[![Download NeoPaste](https://img.shields.io/badge/Download-NeoPaste-blue?style=for-the-badge&logo=apple)](https://github.com/ArioMoniri/NeoPaste/raw/d4deb6b62c66a287d79c30dc9eb4594a910116cf/NeoPaste%201.0.dmg)
-> Save Code Snippets & Images Instantly on macOS
-
-NeoPaste is a lightweight macOS app that makes saving clipboard content a breeze. Whether it's code snippets, images, or any other content - just press your keyboard shortcut and it's saved as a file wherever you want. No complex setup, just instant saving.
 
 <p align="center">
   <a href="https://github.com/ArioMoniri/NeoPaste/raw/d4deb6b62c66a287d79c30dc9eb4594a910116cf/NeoPaste%201.0.dmg">
-    <img src="https://raw.githubusercontent.com/ArioMoniri/NeoPaste/4bc184bdf3735f9bf58ce12736cc87458434949d/Sleek%20Glossy%20macOS.png" alt="NeoPaste Icon" width="200"/>
+    <img src="https://raw.githubusercontent.com/ArioMoniri/NeoPaste/4bc184bdf3735f9bf58ce12736cc87458434949d/Sleek%20Glossy%20macOS.png" alt="NeoPaste Icon" width="400"/>
   </a>
 </p>
+
+<h1 align="center" style="font-size: 8em;">NeoPaste 📋</h1>
+
+<div align="center">
+
+[![Download NeoPaste](https://img.shields.io/badge/Download-NeoPaste-blue?style=for-the-badge&logo=apple)](https://github.com/ArioMoniri/NeoPaste/raw/d4deb6b62c66a287d79c30dc9eb4594a910116cf/NeoPaste%201.0.dmg)
+
+</div>
+<h1 align="center" style="font-size: 2em;"> Save Code Snippets & Images Instantly on macOS</h1>
+NeoPaste is a lightweight macOS app that makes saving clipboard content a breeze. Whether it's code snippets, images, or any other content - just press your keyboard shortcut and it's saved as a file wherever you want. No complex setup, just instant saving.
+
+
 
 ## 🎬 Demo
 
