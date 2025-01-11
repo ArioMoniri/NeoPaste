@@ -17,10 +17,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Resolve Dependencies
-        run: |
-          xcodebuild -resolvePackageDependencies \
-          -project NeoPaste.xcodeproj
+      - name: Set Xcode version
+        run: sudo xcode-select --switch /Applications/Xcode_14.3.app
 
       - name: Build the app (Release Configuration)
         run: |
@@ -34,7 +32,7 @@ jobs:
       - name: Verify the build
         run: test -d build || echo "Build directory not found!"
 
-      - name: Archive the app (Optional)
+      - name: Archive the app
         if: success()
         run: |
           xcodebuild archive \
@@ -49,7 +47,7 @@ jobs:
           name: neospaste-archive
           path: build/NeoPaste.xcarchive
 
-      - name: Export the archive (Optional)
+      - name: Export the archive
         if: success()
         run: |
           xcodebuild -exportArchive \
@@ -62,34 +60,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: neospaste-exported-app
-          path: build/exported-app
-
-      - name: Archive the app (Optional)
-        if: success()
-        run: |
-          xcodebuild archive \
-          -project pasterapp.xcodeproj \
-          -scheme pasterapp \
-          -archivePath build/pasterapp.xcarchive
-
-      - name: Upload Archive
-        if: success()
-        uses: actions/upload-artifact@v3
-        with:
-          name: pasterapp-archive
-          path: build/pasterapp.xcarchive
-
-      - name: Export the archive (Optional)
-        if: success()
-        run: |
-          xcodebuild -exportArchive \
-          -archivePath build/pasterapp.xcarchive \
-          -exportOptionsPlist ExportOptions.plist \
-          -exportPath build/exported-app
-
-      - name: Upload Exported App
-        if: success()
-        uses: actions/upload-artifact@v3
-        with:
-          name: pasterapp-exported-app
           path: build/exported-app
