@@ -66,7 +66,7 @@ At NeoPaste, your privacy and security are our top priorities. Here's how we ens
 
 If you have any concerns or questions about privacy, feel free to [open an issue](https://github.com/ArioMoniri/NeoPaste/issues) or contact me directly.
 
-> **Note**  
+> ℹ️ **Note**  
 You can help translate this application into your own language! This is an essential step in making NeoPaste accessible to everyone, regardless of their English proficiency. Learn how to contribute by visiting the [Translating NeoPaste](##🌍-translating-neopaste) section.
 > 
 ## 🛠️ Download NeoPaste
