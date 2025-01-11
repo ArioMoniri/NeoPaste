@@ -48,10 +48,5 @@
 	<array>
 		<string>/Downloads/</string>
 		<string>/Documents/</string>
-	</array>
-	<key>com.apple.security.temporary-exception.mach-lookup.global-name</key>
-	<array>
-		<string>com.apple.pasteboard.1</string>
-	</array>
 </dict>
 </plist>
