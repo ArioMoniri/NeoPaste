@@ -1,7 +1,12 @@
 [![CLA assistant](https://cla-assistant.io/readme/badge/ArioMoniri/NeoPaste)](https://cla-assistant.io/ArioMoniri/neopaste)
-![macOS Build Check](https://github.com/ArioMoniri/neopaste/actions/workflows/build-check.yml/badge.svg)
 ![License](https://img.shields.io/github/license/ArioMoniri/neopaste)
-[![Downloads](https://img.shields.io/github/downloads/ArioMoniri/NeoPaste/total)](https://github.com/ArioMoniri/NeoPaste/releases)
+[![Total Downloads](https://img.shields.io/github/downloads/ArioMoniri/NeoPaste/total)](https://github.com/ArioMoniri/NeoPaste/releases)
+![GitHub issues](https://img.shields.io/github/issues/ArioMoniri/NeoPaste)
+![GitHub forks](https://img.shields.io/github/forks/ArioMoniri/NeoPaste)
+![GitHub stars](https://img.shields.io/github/stars/ArioMoniri/NeoPaste)
+![GitHub contributors](https://img.shields.io/github/contributors/ArioMoniri/NeoPaste)
+![GitHub](https://img.shields.io/badge/Localized-Available-brightgreen)
+![Website](https://img.shields.io/website?url=<website_url>)
 
 
 
