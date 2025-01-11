@@ -1,6 +1,6 @@
 [![CLA assistant](https://cla-assistant.io/readme/badge/ArioMoniri/NeoPaste)](https://cla-assistant.io/ArioMoniri/neopaste)
 ![License](https://img.shields.io/github/license/ArioMoniri/neopaste)
-[![Total Downloads](https://img.shields.io/github/downloads/ArioMoniri/NeoPaste/total)](https://github.com/ArioMoniri/NeoPaste/releases)
+[![Total Downloads](https://img.shields.io/github/Total/ArioMoniri/NeoPaste/total)](https://github.com/ArioMoniri/NeoPaste/releases)
 ![GitHub issues](https://img.shields.io/github/issues/ArioMoniri/NeoPaste)
 ![GitHub forks](https://img.shields.io/github/forks/ArioMoniri/NeoPaste)
 ![GitHub stars](https://img.shields.io/github/stars/ArioMoniri/NeoPaste)
