@@ -20,7 +20,7 @@ jobs:
       - name: List Xcode Versions
         run: ls /Applications | grep Xcode
 
-      - name: Select Xcode 14.3
+      - name: Select Xcode 15.0
         run: |
           sudo xcode-select --switch /Applications/Xcode_14.3.app
           xcodebuild -version
