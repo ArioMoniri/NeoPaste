@@ -1,19 +1,3 @@
-//
-// Copyright 2025 Ariorad Moniri
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-//     http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
-//
-
 import AppKit
 import SwiftUI
 import UserNotifications
@@ -337,45 +321,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             setupStatusMenu()
         }
     }
-    
+
     @objc private func handleSaveCompleted() {
         logger.info("Save operation completed successfully")
     }
-    
+
     @objc private func handleSaveError(_ notification: Notification) {
         if let error = notification.object as? Error {
             logger.error("Save operation failed: \(error.localizedDescription)")
         }
-    }
-    
-    @objc func showPreferences(_ sender: Any?) {
-        if let preferencesWindow = preferencesWindow {
-            preferencesWindow.makeKeyAndOrderFront(nil)
-            NSApp.activate(ignoringOtherApps: true)
-            return
-        }
-        
-        let preferencesView = PreferencesView()
-            .environmentObject(clipboardMonitor)
-            .environmentObject(shortcutManager)
-        
-        let window = NSWindow(
-            contentRect: NSRect(x: 0, y: 0,
-                              width: AppConstants.preferencesWindowSize.width,
-                              height: AppConstants.preferencesWindowSize.height),
-            styleMask: [.titled, .closable, .miniaturizable],
-            backing: .buffered,
-            defer: false
-        )
-        
-        window.title = "Preferences"
-        window.center()
-        window.contentView = NSHostingView(rootView: preferencesView)
-        window.isReleasedWhenClosed = false
-        window.level = .floating
-        preferencesWindow = window
-        window.makeKeyAndOrderFront(nil)
-        NSApp.activate(ignoringOtherApps: true)
     }
     
     func requestFileAccessPermissions() {
@@ -396,7 +350,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             requestFileAccessPermissions()
         }
     }
-    
+
     @objc private func saveWithFormat(_ sender: NSMenuItem) {
         Task {
             do {
@@ -442,6 +396,38 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
         }
     }
+    
+    @objc func showPreferences(_ sender: Any?) {
+        if let preferencesWindow = preferencesWindow {
+            preferencesWindow.makeKeyAndOrderFront(nil)
+            NSApp.activate(ignoringOtherApps: true)
+            return
+        }
+        
+        let preferencesView = PreferencesView()
+            .environmentObject(clipboardMonitor)
+            .environmentObject(shortcutManager)
+        
+        let window = NSWindow(
+            contentRect: NSRect(x: 0, y: 0,
+                              width: AppConstants.preferencesWindowSize.width,
+                              height: AppConstants.preferencesWindowSize.height),
+            styleMask: [.titled, .closable, .miniaturizable],
+            backing: .buffered,
+            defer: false
+        )
+        
+        window.title = "Preferences"
+        window.center()
+        window.contentView = NSHostingView(rootView: preferencesView)
+        window.isReleasedWhenClosed = false
+        window.level = .floating
+        preferencesWindow = window
+        window.makeKeyAndOrderFront(nil)
+        NSApp.activate(ignoringOtherApps: true)
+    }
+
+    
     
     // MARK: - UI Update Methods
     private func updateStatusIcon(for content: ClipboardContent) {
