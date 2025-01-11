@@ -6,7 +6,7 @@
 ![GitHub stars](https://img.shields.io/github/stars/ArioMoniri/NeoPaste)
 ![GitHub contributors](https://img.shields.io/github/contributors/ArioMoniri/NeoPaste)
 ![GitHub](https://img.shields.io/badge/Localized-Available-brightgreen)
-![Website](https://img.shields.io/website?url=<website_url>)
+![Website]([https://img.shields.io/website?url=<website_url>](https://neopaste.replit.app/))
 
 
 
