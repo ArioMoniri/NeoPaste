@@ -17,8 +17,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Select Xcode 15.4
-        run: sudo xcode-select --switch /Applications/Xcode_15.4.app
+      - name: List Xcode Versions
+        run: ls /Applications | grep Xcode
+
+      - name: Select Xcode 14.3
+        run: |
+          sudo xcode-select --switch /Applications/Xcode_14.3.app
+          xcodebuild -version
 
       - name: Build the app (Release Configuration)
         run: |
