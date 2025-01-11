@@ -1,19 +1,3 @@
-//
-// Copyright 2025 Ariorad Moniri
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-//     http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
-//
-
 import AppKit
 import SwiftUI
 import Combine
@@ -38,6 +22,7 @@ class MenuBarManager: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
     private let fileSaver = FileSaver.shared
     private let notificationCenter = UNUserNotificationCenter.current()
+    private let defaults = UserDefaults.standard
     
     // MARK: - Initialization
     private init() {
@@ -49,8 +34,11 @@ class MenuBarManager: ObservableObject {
     
     // MARK: - Setup Methods
     private func setupNotifications() {
-        notificationCenter.requestAuthorization(options: [.alert, .sound]) { granted, error in
-            if let error = error {
+        Task {
+            do {
+                let granted = try await notificationCenter.requestAuthorization(options: [.alert, .sound])
+                print("Notification authorization granted: \(granted)")
+            } catch {
                 print("Notification permission error: \(error.localizedDescription)")
             }
         }
@@ -99,8 +87,9 @@ class MenuBarManager: ObservableObject {
     
     private func updateMenu() {
         let menu = NSMenu()
+        menu.autoenablesItems = false  // Important: Prevent auto-enabling of menu items
         let content = clipboardMonitor.currentContent
-        
+
         // Content Type Indicator
         let contentTypeItem = NSMenuItem(title: "Content: \(content.typeDescription)",
                                        action: nil,
@@ -108,51 +97,98 @@ class MenuBarManager: ObservableObject {
         contentTypeItem.isEnabled = false
         menu.addItem(contentTypeItem)
         menu.addItem(NSMenuItem.separator())
-        
+
         // Save As Menu
         let saveAsMenu = NSMenu()
-        for format in content.availableFormats {
-            let menuItem = NSMenuItem(title: format, action: #selector(handleSaveWithFormat(_:)), keyEquivalent: "")
-            menuItem.representedObject = format // Store the format
-            saveAsMenu.addItem(menuItem)
+        saveAsMenu.autoenablesItems = false  // Important: Prevent auto-enabling of submenu items
+        
+        if !content.availableFormats.isEmpty {
+            for format in content.availableFormats {
+                let menuItem = NSMenuItem(
+                    title: format.uppercased(),
+                    action: #selector(handleSaveWithFormat(_:)),
+                    keyEquivalent: ""
+                )
+                menuItem.target = self
+                menuItem.isEnabled = true
+                saveAsMenu.addItem(menuItem)
+            }
+
+            let saveAsItem = NSMenuItem(title: "Save As", action: nil, keyEquivalent: "")
+            saveAsItem.submenu = saveAsMenu
+            saveAsItem.isEnabled = true
+            menu.addItem(saveAsItem)
+        } else {
+            let emptyItem = NSMenuItem(title: "No Content to Save", action: nil, keyEquivalent: "")
+            emptyItem.isEnabled = false
+            saveAsMenu.addItem(emptyItem)
+            let saveAsItem = NSMenuItem(title: "Save As", action: nil, keyEquivalent: "")
+            saveAsItem.submenu = saveAsMenu
+            saveAsItem.isEnabled = false
+            menu.addItem(saveAsItem)
         }
 
-        let saveAsItem = NSMenuItem(title: "Save As", action: nil, keyEquivalent: "")
-        saveAsItem.submenu = saveAsMenu
-        menu.addItem(saveAsItem)
-        
         // Quick Save
-        menu.addItem(withTitle: "Quick Save",
-                    action: #selector(handleQuickSave(_:)),
-                    keyEquivalent: "s")
-        
+        let quickSaveItem = NSMenuItem(
+            title: "Quick Save",
+            action: #selector(handleQuickSave(_:)),
+            keyEquivalent: "s"
+        )
+        quickSaveItem.target = self
+        quickSaveItem.isEnabled = !content.availableFormats.isEmpty
+        menu.addItem(quickSaveItem)
+
         menu.addItem(NSMenuItem.separator())
-        
+
         // Recent Files
-        if let recentFiles = UserDefaults.standard.stringArray(forKey: "RecentFiles"),
+        let recentFilesMenu = NSMenu()
+        recentFilesMenu.autoenablesItems = false
+        
+        if let recentFiles = defaults.stringArray(forKey: "RecentFiles"),
            !recentFiles.isEmpty {
-            let recentMenu = NSMenu()
             for path in recentFiles.prefix(5) {
-                recentMenu.addItem(withTitle: (path as NSString).lastPathComponent,
-                                 action: #selector(handleOpenRecentFile(_:)),
-                                 keyEquivalent: "")
+                let menuItem = NSMenuItem(
+                    title: (path as NSString).lastPathComponent,
+                    action: #selector(handleOpenRecentFile(_:)),
+                    keyEquivalent: ""
+                )
+                menuItem.target = self
+                menuItem.isEnabled = true
+                menuItem.representedObject = path
+                recentFilesMenu.addItem(menuItem)
             }
             
             let recentItem = NSMenuItem(title: "Recent Files", action: nil, keyEquivalent: "")
-            recentItem.submenu = recentMenu
+            recentItem.submenu = recentFilesMenu
+            recentItem.isEnabled = true
             menu.addItem(recentItem)
             menu.addItem(NSMenuItem.separator())
         }
-        
-        // Preferences & Quit
-        menu.addItem(withTitle: "Preferences...",
-                    action: #selector(AppDelegate.shared.showPreferences(_:)),
-                    keyEquivalent: ",")
+
+
+
+        // Preferences
+        let preferencesItem = NSMenuItem(
+            title: "Preferences...",
+            action: #selector(showPreferences),
+            keyEquivalent: ","
+        )
+        preferencesItem.target = self
+        preferencesItem.isEnabled = true
+        menu.addItem(preferencesItem)
+
         menu.addItem(NSMenuItem.separator())
-        menu.addItem(withTitle: "Quit",
-                    action: #selector(NSApplication.terminate(_:)),
-                    keyEquivalent: "q")
-        
+
+        // Quit
+        let quitItem = NSMenuItem(
+            title: "Quit",
+            action: #selector(NSApplication.terminate(_:)),
+            keyEquivalent: "q"
+        )
+        quitItem.target = NSApp
+        quitItem.isEnabled = true
+        menu.addItem(quitItem)
+
         statusItem.menu = menu
     }
     
@@ -160,12 +196,14 @@ class MenuBarManager: ObservableObject {
     @objc private func handleQuickSave(_ sender: NSMenuItem) {
         Task {
             do {
-                // Retrieve the selected format from the menu item's representedObject
-                UserDefaults.standard.set(sender.title.lowercased(), forKey: "lastSelectedFormat")
-                guard let format = sender.representedObject as? String else {
-                    throw FileSavingError.invalidFileFormat
-                }
-                let savedURL = try await fileSaver.saveDirectly(clipboardMonitor.currentContent, format:format)
+                let format = clipboardMonitor.currentContent.defaultFormat
+                defaults.set(format, forKey: "lastSelectedFormat")
+
+                let savedURL = try await fileSaver.saveDirectly(
+                    clipboardMonitor.currentContent,
+                    format: format
+                )
+                updateRecentFiles(with: savedURL.path)
                 print("Content saved successfully at: \(savedURL.path)")
                 NotificationCenter.default.post(name: .saveCompleted, object: nil)
             } catch {
@@ -178,16 +216,14 @@ class MenuBarManager: ObservableObject {
     @objc private func handleSaveWithFormat(_ sender: NSMenuItem) {
         Task {
             do {
-                // Store the selected format in UserDefaults for future use
-                UserDefaults.standard.set(sender.title.lowercased(), forKey: "lastSelectedFormat")
-                
-                // Retrieve the selected format from the menu item's representedObject
-                guard let format = sender.representedObject as? String else {
-                    throw FileSavingError.invalidFileFormat
-                }
+                let format = sender.title.lowercased()
+                defaults.set(format, forKey: "lastSelectedFormat")
 
-                // Use the format retrieved from representedObject
-                let savedURL = try await fileSaver.saveDirectly(clipboardMonitor.currentContent, format: format)
+                let savedURL = try await fileSaver.saveDirectly(
+                    clipboardMonitor.currentContent,
+                    format: format
+                )
+                updateRecentFiles(with: savedURL.path)
                 print("Content saved successfully at: \(savedURL.path)")
                 NotificationCenter.default.post(name: .saveCompleted, object: nil)
             } catch {
@@ -198,11 +234,38 @@ class MenuBarManager: ObservableObject {
     }
 
     @objc private func handleOpenRecentFile(_ sender: NSMenuItem) {
-        // Implementation for opening recent files
-        print("Opening recent file: \(sender.title)")
+        guard let path = sender.representedObject as? String else { return }
+        NSWorkspace.shared.selectFile(path, inFileViewerRootedAtPath: "")
+    }
+    
+    @objc private func showPreferences() {
+        DispatchQueue.main.async {
+            AppDelegate.shared.showPreferences(nil)
+        }
     }
     
 
+
+    
+    private func updateRecentFiles(with filePath: String) {
+        var recentFiles = defaults.stringArray(forKey: "RecentFiles") ?? []
+        
+        // Remove duplicate if exists
+        if let index = recentFiles.firstIndex(of: filePath) {
+            recentFiles.remove(at: index)
+        }
+        
+        // Add to front of array
+        recentFiles.insert(filePath, at: 0)
+        
+        // Limit to 5 recent files
+        let limitedRecentFiles = Array(recentFiles.prefix(5))
+        
+        defaults.set(limitedRecentFiles, forKey: "RecentFiles")
+        
+        // Update menu
+        updateMenu()
+    }
     
     // MARK: - Helper Methods
     private func handleClipboardChange() async {
