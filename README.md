@@ -39,24 +39,49 @@ NeoPaste is a lightweight macOS app that makes saving clipboard content a breeze
 
 ---
 
-## 🚀 Upcoming Release: NeoPaste v1.3.0
+## 📢 Latest Release: NeoPaste v1.3.0
 
-The next version of NeoPaste, **v1.3.0**, will introduce the highly anticipated **"Save in Active Folder"** functionality. This feature will allow you to save clipboard content directly into the currently active folder, offering both flexibility and convenience.
+The highly anticipated **v1.3.0** of NeoPaste is now available! 🎉 This version introduces groundbreaking features to make clipboard management even more seamless and efficient.
 
-The next version of NeoPaste, **v1.3.0**, will introduce several exciting features and updates:
-
-- **"Save in Active Folder"**: Save clipboard content directly into the currently active folder, offering maximum flexibility.
-- **Homebrew Support**: Install and update NeoPaste effortlessly via Homebrew.
-- **SHA-256 Checksums**: For enhanced security, all downloadable `.dmg` files will include their corresponding SHA-256 checksum files. This allows users to verify the integrity and authenticity of their downloads.
-
-### 🍺 Installation via Homebrew (v1.3.0 and later)
-Starting with version 1.3.0, you will also be able to install NeoPaste via **Homebrew** for even easier setup and updates.
-
-### 🔑 Verifying Download Integrity (v1.3.0 and later)
-Starting from version 1.3.0, each release on the [GitHub releases page](https://github.com/ArioMoniri/NeoPaste/releases) will include a `.sha256` checksum file for every downloadable `.dmg` file. To verify the integrity of the downloaded file.
+### 🔥 What's New in v1.3.0?
+- **"Save in Active Folder"**: Automatically paste clipboard content directly into the currently active Finder folder, offering maximum flexibility and ease of use. 🗂️
+- **Homebrew Support**: Install and update NeoPaste effortlessly via **Homebrew**. 🍺 (Available starting **14th January**)
+- **Enhanced Usability**: A smoother and more intuitive user experience.
 
 ---
+
+### 📥 Download v1.3.0
+You can download the latest version of NeoPaste **v1.3.0** from the [GitHub releases page](https://github.com/ArioMoniri/NeoPaste/releases).  
+Homebrew installation will be available starting **14th January**.
+
+---
+
+### 🔧 Verifying Download Integrity (Available starting **14th January**)
+Starting with version 1.3.0, each release includes a `.sha256` checksum file for every downloadable `.dmg` file. Use this to verify the integrity and authenticity of your download:
+
+```bash
+shasum -a 256 NeoPaste-1.3.0.dmg
+```
+
+Compare the output with the checksum in the `.sha256` file provided on the [releases page](https://github.com/ArioMoniri/NeoPaste/releases).
+
+---
+
+### 📅 Features Introduced in v1.3.0
+- Save clipboard content directly into the active Finder tab for seamless pasting. 🗂️
+- Homebrew support simplifies installation and updates. 🍺
+- Download verification via SHA-256 checksums for added security. 🔒
+
+
+
+
+Thank you for your continued support! ❤️ We hope you enjoy the latest features of NeoPaste. Stay tuned for future updates, and don't hesitate to share feedback or suggestions!
 <br>
+
+
+---
+
+
 
 ## 🎬 Demo
 
