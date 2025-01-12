@@ -10,7 +10,7 @@
 ![GitHub contributors](https://img.shields.io/github/contributors/ArioMoniri/NeoPaste)
 ![GitHub](https://img.shields.io/badge/Localized-Available-brightgreen)
 ![Website](https://img.shields.io/website?url=https://neopaste.replit.app/)
-[![Crowdin](https://badges.crowdin.net/your-project-name/localized.svg)](https://crowdin.com/project/neopaste)
+[![Crowdin](https://badges.crowdin.net/neopaste/localized.svg)](https://crowdin.com/project/neopaste)
 
 </div>
 
