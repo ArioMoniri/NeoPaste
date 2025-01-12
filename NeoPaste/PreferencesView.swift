@@ -1,19 +1,3 @@
-//
-// Copyright 2025 Ariorad Moniri
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-//     http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
-//
-
 import SwiftUI
 import HotKey
 import UniformTypeIdentifiers
@@ -77,6 +61,7 @@ struct GeneralSettingsTab: View {
     @AppStorage(UserDefaultsKeys.showNotifications) private var showNotifications = true
     @AppStorage(UserDefaultsKeys.autoStartEnabled) private var autoStartEnabled = false
     @AppStorage(UserDefaultsKeys.darkModeEnabled) private var darkModeEnabled = false
+    @AppStorage(UserDefaultsKeys.useFinderWindow) private var useFinderWindow = false
     
     var body: some View {
         Form {
@@ -91,6 +76,11 @@ struct GeneralSettingsTab: View {
                     selectSaveLocation()
                 }
                 .buttonStyle(.bordered)
+            }
+            
+            Section("Save Behavior") {
+                Toggle("Use Active Finder Window for Shortcuts", isOn: $useFinderWindow)
+                    .help("When enabled, shortcuts will save to the active Finder window instead of the default location")
             }
             
             Section("Application") {
@@ -146,6 +136,8 @@ struct GeneralSettingsTab: View {
             print("Failed to \(enabled ? "enable" : "disable") launch at login: \(error.localizedDescription)")
         }
     }
+
+
     
 
 
