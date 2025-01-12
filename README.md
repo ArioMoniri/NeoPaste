@@ -3,14 +3,15 @@
   
 [![CLA assistant](https://cla-assistant.io/readme/badge/ArioMoniri/NeoPaste)](https://cla-assistant.io/ArioMoniri/neopaste)
 ![License](https://img.shields.io/github/license/ArioMoniri/neopaste)
-[![Total Downloads](https://img.shields.io/github/downloads/ArioMoniri/NeoPaste/total)](https://github.com/ArioMoniri/NeoPaste/releases)
+![Total Downloads](https://img.shields.io/github/downloads/ArioMoniri/NeoPaste/total?label=Total%20Downloads)
 ![GitHub issues](https://img.shields.io/github/issues/ArioMoniri/NeoPaste)
 ![GitHub forks](https://img.shields.io/github/forks/ArioMoniri/NeoPaste)
 ![GitHub stars](https://img.shields.io/github/stars/ArioMoniri/NeoPaste)
 ![GitHub contributors](https://img.shields.io/github/contributors/ArioMoniri/NeoPaste)
 ![GitHub](https://img.shields.io/badge/Localized-Available-brightgreen)
 ![Website](https://img.shields.io/website?url=https://neopaste.replit.app/)
-[![Crowdin](https://badges.crowdin.net/neopaste/localized.svg)](https://crowdin.com/project/neopaste)
+![Crowdin](https://badges.crowdin.net/neopaste/localized.svg)](https://crowdin.com/project/neopaste)
+
 
 </div>
 
