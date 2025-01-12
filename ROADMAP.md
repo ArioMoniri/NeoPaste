@@ -7,6 +7,7 @@
 - Global keyboard shortcut
 
 ## Upcoming Features
+- **Save in active Folder**: Support for both save in default and active location.
 - **Cross-device Clipboard Sync**: Save and sync clipboard content across multiple devices.
 - **Compression Support**: Automatic compression for image files.
 - **Advanced Save Options**: Support for custom naming conventions and file structures.
