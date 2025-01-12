@@ -1,19 +1,3 @@
-//
-// Copyright 2025 Ariorad Moniri
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-//     http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
-//
-
 import Foundation
 import AppKit
 import UniformTypeIdentifiers
@@ -114,6 +98,35 @@ class FileSaver: @unchecked Sendable {
                     savePanel.canCreateDirectories = true
                     savePanel.isExtensionHidden = false
                     savePanel.level = .floating
+                    
+                    // Set initial directory synchronously before showing panel
+                    if defaults.bool(forKey: UserDefaultsKeys.useFinderWindow) {
+                        if let finderURL = getActiveFinderWindowPath() {
+                            print("Setting directory to Finder location: \(finderURL.path)")
+                            savePanel.directoryURL = finderURL
+                        } else {
+                            print("No active Finder window found, falling back to default location")
+                            if let customLocationPath = defaults.string(forKey: UserDefaultsKeys.customSaveLocation),
+                               let customLocation = URL(string: customLocationPath) {
+                                savePanel.directoryURL = customLocation
+                            }
+                        }
+                    } else if let customLocationPath = defaults.string(forKey: UserDefaultsKeys.customSaveLocation),
+                              let customLocation = URL(string: customLocationPath) {
+                        savePanel.directoryURL = customLocation
+                    }
+                    
+                    if let directoryURL = savePanel.directoryURL {
+                        // Verify the directory exists and is accessible
+                        var isDirectory: ObjCBool = false
+                        if FileManager.default.fileExists(atPath: directoryURL.path, isDirectory: &isDirectory) && isDirectory.boolValue {
+                            print("Directory verified: \(directoryURL.path)")
+                        } else {
+                            print("Invalid directory, resetting to default")
+                            savePanel.directoryURL = nil
+                        }
+                    }
+                    
                     NSApp.activate(ignoringOtherApps: true)
                     
                     // Setup format selection and compression
@@ -175,7 +188,7 @@ class FileSaver: @unchecked Sendable {
                         defaultName = generateDefaultName(base: DefaultNames.file)
                         formatPopup.isHidden = true
                         formatLabel.isHidden = true
-                        compressionCheckbox.isHidden = false
+                        compressionCheckbox.isHidden = true
                         savePanel.allowedContentTypes = [.zip]
                         
                     case .empty:
@@ -349,6 +362,38 @@ class FileSaver: @unchecked Sendable {
         let location: URL
         let compress: Bool
     }
+    
+    private func getActiveFinderWindowPath() -> URL? {
+        guard NSWorkspace.shared.frontmostApplication?.bundleIdentifier == "com.apple.finder" else {
+            print("Finder is not frontmost application")
+            return nil
+        }
+
+        let script = """
+        tell application "Finder"
+            if (count of windows) > 0 then
+                try
+                    get POSIX path of (target of front window as alias)
+                on error
+                    get POSIX path of (desktop as alias)
+                end try
+            end if
+        end tell
+        """
+        
+        let appleScript = NSAppleScript(source: script)
+        var error: NSDictionary?
+        
+        if let pathString = appleScript?.executeAndReturnError(&error).stringValue {
+            print("Found Finder path: \(pathString)")
+            return URL(fileURLWithPath: pathString, isDirectory: true)
+        } else if let error = error {
+            print("AppleScript error: \(error)")
+        }
+        
+        return nil
+    }
+    
     
     private func generateDefaultName(base: String) -> String {
         let dateFormatter = DateFormatter()
