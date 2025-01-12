@@ -54,5 +54,8 @@
     
     <key>NSDownloadsFolderUsageDescription</key>
     <string>NeoPaste needs access to save files to your Downloads folder.</string>
+    <key>NSAppleEventsUsageDescription</key>
+    <string>This app needs access to Finder to save files in the active Finder window.</string>
+    
 </dict>
 </plist>
