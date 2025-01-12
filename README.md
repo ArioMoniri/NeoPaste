@@ -35,7 +35,19 @@
 <h1 align="center" style="font-size: 2em;"> Save Code Snippets & Images Instantly on macOS</h1>
 NeoPaste is a lightweight macOS app that makes saving clipboard content a breeze. Whether it's code snippets, images, or any other content - just press your keyboard shortcut and it's saved as a file wherever you want. No complex setup, just instant saving.
 
+<br><br>
 
+---
+
+### 🚀 Upcoming Release: NeoPaste v1.3.0
+
+The next version of NeoPaste, **v1.3.0**, will introduce the highly anticipated **"Save in Active Folder"** functionality. This feature will allow you to save clipboard content directly into the currently active folder, offering both flexibility and convenience.
+
+#### Installation via Homebrew (v1.3.0 and later)
+Starting with version 1.3.0, you will also be able to install NeoPaste via **Homebrew** for even easier setup and updates. Follow these steps to install NeoPaste using Homebrew once the release is live:
+
+---
+<br>
 
 ## 🎬 Demo
 
