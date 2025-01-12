@@ -260,7 +260,7 @@ Click below to buy me a coffee and keep me fueled for more projects!
 
 ### Connect with Me
 - GitHub: [@ArioMoniri](https://github.com/ArioMoniri)
-- X (Twitter): [@FuckStress00](https://twitter.com/FuckStress00)
+- X (Twitter): [@neo_paste](https://twitter.com/neo_paste)
 
 ### Share Your Ideas & Feedback! ✨
 Have ideas for new features or improvements? I'd love to hear from you!
