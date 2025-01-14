@@ -71,7 +71,7 @@ Homebrew installation will be available starting **14th January**.
 
 ---
 
-### 🔧 Verifying Download Integrity (Available starting **14th January**)
+### 🔧 Verifying Download Integrity (Available starting **16th January**)
 Starting with version 1.3.0, each release includes a `.sha256` checksum file for every downloadable `.dmg` file. Use this to verify the integrity and authenticity of your download:
 
 ```bash
