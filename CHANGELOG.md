@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented here.
 
+
+All notable changes to this project will be documented here.
+
+## [1.4.0] - 2025-01-16
+### Added
+- **Quick Preview Clipboard Mode**: Accessible from the menu bar, allowing users to preview clipboard content before pasting.
+- **Edit Before Pasting**: Users can now edit text or images in the clipboard prior to pasting, providing greater flexibility.
+- **Help Tab in Preferences**: Enhanced accessibility with links to GitHub resources directly within the app.
+- **Updates Tab**: Automatically checks for new releases on GitHub and provides an option to update the app seamlessly.
+
+### Improved
+- **Enhanced Preferences Page UI/UX**: Redesigned for better navigation and user experience, making it easier to access settings and features.
+
+---
+
 ## [1.3.0] - 2025-01-13
 ### Added
 - Introduced **active Finder tab pasting**: Automatically paste clipboard contents into the currently active Finder tab.
