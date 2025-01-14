@@ -39,6 +39,21 @@ NeoPaste is a lightweight macOS app that makes saving clipboard content a breeze
 
 ---
 
+## 🚀 NeoPaste v1.4.0 Pre-Release Announcement 🎉
+
+Get ready for the next evolution of clipboard magic! 🪄✨ 
+
+### 🔥 What's New?
+- 🖼️ **Quick Preview Mode**: Edit text or images before pasting!
+- 📋 **Menu Bar Clipboard Preview**: Instantly preview your clipboard content right from the menu bar.
+- ⚙️ **Enhanced Preferences**: Sleek UI/UX with a new **Help Tab** 🆘 and **Updates Tab** 🔄.
+- 📥 **Auto-Update**: Seamless updates from GitHub releases.
+
+Stay tuned for the official release! 💻🌟 
+
+---
+
+
 ## 📢 Latest Release: NeoPaste v1.3.0
 
 The highly anticipated **v1.3.0** of NeoPaste is now available! 🎉 This version introduces groundbreaking features to make clipboard management even more seamless and efficient.
