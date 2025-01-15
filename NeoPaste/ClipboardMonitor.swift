@@ -1,19 +1,3 @@
-//
-// Copyright 2025 Ariorad Moniri
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-//     http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
-//
-
 import Foundation
 import AppKit
 import UniformTypeIdentifiers
@@ -118,23 +102,32 @@ class ClipboardMonitor: ObservableObject {
     }
     
     // MARK: - Published Properties
-    @Published private(set) var currentContent: ClipboardContent = .empty
+    //@Published private(set) var currentContent: ClipboardContent = .empty
+    @Published private(set) var currentContent: ClipboardContent = .text(AppConstants.welcomeMessage)
+    private var hasShownWelcomeMessage = false
     @Published private(set) var lastChangeDate: Date?
     @Published private(set) var isMonitoring: Bool = false
     @Published var error: Error?
     
     // MARK: - Private Properties
     private var timer: Timer?
-    private var lastChangeCount: Int = 0
+    //private var lastChangeCount: Int = 0
+    private var lastChangeCount: Int = NSPasteboard.general.changeCount
     private let pasteboard = NSPasteboard.general
     private var subscribers = Set<AnyCancellable>()
     private let fileSaver = FileSaver.shared
     
     // MARK: - Initialization
+
     private init() {
-        let subsystem = Bundle.main.bundleIdentifier ?? "com.yourapp.logger"
+        let subsystem = Bundle.main.bundleIdentifier ?? "com.Falcon.logger"
         self.logger = Logger(subsystem: subsystem, category: "ClipboardMonitor")
         setupNotifications()
+        
+        Task {
+            try? await Task.sleep(nanoseconds: 1_000_000_000) // 1 second delay
+            await performReset()
+        }
         handleInitialClipboardContent()
     }
     
@@ -225,11 +218,22 @@ class ClipboardMonitor: ObservableObject {
         
         logger.debug("Detected clipboard change. Old count: \(self.lastChangeCount), New count: \(currentCount)")
         self.lastChangeCount = currentCount
+        try? await Task.sleep(nanoseconds: 100_000_000) // 0.1 second delay
+        hasShownWelcomeMessage = true
         await updateCurrentContent()
     }
+
+
     
     private func updateCurrentContent() async {
         logger.debug("Updating current content...")
+        
+        // Show welcome message only once
+        if !hasShownWelcomeMessage {
+            self.currentContent = .text(AppConstants.welcomeMessage)
+            await notifyContentChanged()
+            return
+        }
         
         // Check for images first
         if let image = NSImage(pasteboard: pasteboard),
@@ -314,6 +318,24 @@ class ClipboardMonitor: ObservableObject {
                 }
             }
             .store(in: &subscribers)
+    }
+    func resetMonitoring() async throws {
+        await performReset()
+    }
+
+    private func performReset() async {
+        stopMonitoring()
+        pasteboard.declareTypes([], owner: nil)
+        lastChangeCount = pasteboard.changeCount
+        
+        do {
+            try await startMonitoring()
+            handleInitialClipboardContent()
+            logger.info("Clipboard monitor reset successfully")
+        } catch {
+            logger.error("Failed to reset clipboard monitor: \(error.localizedDescription)")
+            self.error = error
+        }
     }
 }
 
