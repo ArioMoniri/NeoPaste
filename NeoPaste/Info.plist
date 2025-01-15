@@ -2,60 +2,48 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <!-- App Identity -->
-    <key>CFBundleIdentifier</key>
-    <string>com.Falcon.NeoPaste</string>
-    <key>CFBundleName</key>
-    <string>NeoPaste</string>
-    <key>CFBundlePackageType</key>
-    <string>APPL</string>
-    <key>CFBundleShortVersionString</key>
-    <string>1.0</string>
-    <key>CFBundleVersion</key>
-    <string>1</string>
-    <key>CFBundleExecutable</key>
-    <string>NeoPaste</string>
-    
-    <!-- System Requirements -->
-    <key>LSMinimumSystemVersion</key>
-    <string>14.0</string>
-    
-    <!-- App Behavior -->
-    <key>LSBackgroundOnly</key>
-    <true/>
-    <key>LSUIElement</key>
-    <true/>
-    <key>NSHighResolutionCapable</key>
-    <true/>
-    <key>NSSupportsAutomaticGraphicsSwitching</key>
-    <true/>
-    
-    <!-- App Category -->
-    <key>LSApplicationCategoryType</key>
-    <string>public.app-category.utilities</string>
-    
-    <!-- Principal Class -->
-    <key>NSPrincipalClass</key>
-    <string>NSApplication</string>
-    
-    <!-- Permission Descriptions -->
-    <key>NSNotificationUsageDescription</key>
-    <string>NeoPaste needs notifications permission to alert you when files are saved.</string>
-    
-    <key>NSAccessibilityUsageDescription</key>
-    <string>NeoPaste needs accessibility permission to work with keyboard shortcuts.</string>
-    
-    <key>NSAppleEventsUsageDescription</key>
-    <string>NeoPaste needs automation permission to save files automatically.</string>
-    
-    <!-- Secure Bookmarks -->
-    <key>NSDocumentsFolderUsageDescription</key>
-    <string>NeoPaste needs access to save files in your chosen locations.</string>
-    
-    <key>NSDownloadsFolderUsageDescription</key>
-    <string>NeoPaste needs access to save files to your Downloads folder.</string>
-    <key>NSAppleEventsUsageDescription</key>
-    <string>This app needs access to Finder to save files in the active Finder window.</string>
-    
+	<key>CFBundleIdentifier</key>
+	<string>com.Falcon.NeoPaste</string>
+	<key>CFBundleName</key>
+	<string>NeoPaste</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.4</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>CFBundleExecutable</key>
+	<string>NeoPaste</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>14.0</string>
+	<key>LSBackgroundOnly</key>
+	<true/>
+	<key>LSUIElement</key>
+	<true/>
+	<key>NSHighResolutionCapable</key>
+	<true/>
+	<key>NSSupportsAutomaticGraphicsSwitching</key>
+	<true/>
+	<key>LSApplicationCategoryType</key>
+	<string>public.app-category.utilities</string>
+	<key>NSPrincipalClass</key>
+	<string>NSApplication</string>
+	<key>NSNotificationUsageDescription</key>
+	<string>NeoPaste needs notifications permission to alert you when files are saved.</string>
+	<key>NSAccessibilityUsageDescription</key>
+	<string>NeoPaste needs accessibility permission to work with keyboard shortcuts.</string>
+	<key>NSAppleEventsUsageDescription</key>
+	<string>This app needs to control preview apps for file previewing.</string>
+	<key>NSDocumentsFolderUsageDescription</key>
+	<string>NeoPaste needs access to save files in your chosen locations.</string>
+	<key>NSDownloadsFolderUsageDescription</key>
+	<string>NeoPaste needs access to save files to your Downloads folder.</string>
+	<key>LSMultipleInstancesProhibited</key>
+	<true/>
+    <key>SUPublicEDKey</key>
+    <string>WJW6oDc04x7UBySwM3UPsuzgcyJafp+682VWdVNSt/g=</string>
+
+    <key>SUFeedURL</key>
+    <string>https://raw.githubusercontent.com/ArioMoniri/NeoPaste/refs/heads/Updates/appcast.xml</string>
 </dict>
 </plist>
