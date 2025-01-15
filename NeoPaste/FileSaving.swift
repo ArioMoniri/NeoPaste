@@ -1,23 +1,8 @@
-//
-// Copyright 2025 Ariorad Moniri
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-//     http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
-//
-
 import Foundation
 import AppKit
 import UniformTypeIdentifiers
 import ZIPFoundation
+import Combine
 
 // MARK: - FileSavingError
 enum FileSavingError: LocalizedError {
@@ -28,6 +13,10 @@ enum FileSavingError: LocalizedError {
     case saveFailed
     case accessDenied
     case userCancelled
+    case previewFailed
+    case tempFileCreationFailed
+    case noDefaultLocation
+    case invalidSaveLocation
     
     var errorDescription: String? {
         switch self {
@@ -45,6 +34,14 @@ enum FileSavingError: LocalizedError {
             return "Access denied to save location"
         case .userCancelled:
             return "Save operation cancelled"
+        case .previewFailed:
+            return "Failed to open preview application"
+        case .tempFileCreationFailed:
+            return "Failed to create temporary file"
+        case .noDefaultLocation:
+            return "No Default Location Chosen"
+        case .invalidSaveLocation:
+            return "Invalid Save Location"
         }
     }
 }
@@ -105,9 +102,30 @@ class FileSaver: @unchecked Sendable {
     
     // MARK: - Public Methods
     
-        func saveWithDialog(_ content: ClipboardContent) async throws -> URL {
+    func resolveFinalSavePath(tempURL: URL, defaults: UserDefaults) throws -> URL {
+        if defaults.bool(forKey: UserDefaultsKeys.useFinderWindow),
+           let finderURL = getActiveFinderWindowPath() {
+            return finderURL.appendingPathComponent(tempURL.lastPathComponent)
+        } else if let customLocationPath = defaults.data(forKey: UserDefaultsKeys.customSaveLocation) {
+            do {
+                var isStale: Bool = false
+                let customLocation = try URL(resolvingBookmarkData: customLocationPath,
+                                              options: .withSecurityScope,
+                                              relativeTo: nil,
+                                              bookmarkDataIsStale: &isStale)
+                return customLocation.appendingPathComponent(tempURL.lastPathComponent)
+            } catch {
+                throw FileSavingError.invalidSaveLocation
+            }
+        } else {
+            throw FileSavingError.invalidSaveLocation
+        }
+    }
+    
+    func saveWithDialog(_ content: ClipboardContent, format: String? = nil) async throws -> URL {
             let contentCopy = content
-            
+            let selectedSaveFormat = UserDefaults.standard.string(forKey: UserDefaultsKeys.selectedSaveFormat)
+        
             return try await withCheckedThrowingContinuation { continuation in
                 Task { @MainActor in
                     let savePanel = NSSavePanel()
@@ -159,6 +177,14 @@ class FileSaver: @unchecked Sendable {
                     compressionCheckbox.frame = NSRect(x: 0, y: 5, width: 140, height: 20)
                     compressionCheckbox.state = defaults.bool(forKey: "compressFiles") ? .on : .off
                     
+                    // After compression checkbox setup, add:
+                    let previewCheckbox = NSButton(checkboxWithTitle: "Preview Before Save", target: nil, action: nil)
+                    previewCheckbox.frame = NSRect(x: 0, y: 5, width: 180, height: 20)
+                    previewCheckbox.state = defaults.bool(forKey: UserDefaultsKeys.previewBeforeSave) ? .on : .off
+
+                    accessoryView.frame = NSRect(x: 0, y: 0, width: 200, height: 84)  // Increased height
+                    accessoryView.addSubview(previewCheckbox)
+                    
                     // Configure based on content type
                     let defaultName: String
                     var selectedFormat: String = ""
@@ -167,7 +193,7 @@ class FileSaver: @unchecked Sendable {
                     case .image:
                         defaultName = generateDefaultName(base: DefaultNames.image)
                         formatPopup.addItems(withTitles: ImageFormat.allCases.map { $0.displayName })
-                        selectedFormat = defaults.string(forKey: "defaultImageFormat") ?? "PNG"
+                        selectedFormat = selectedSaveFormat?.uppercased() ?? defaults.string(forKey: UserDefaultsKeys.defaultImageFormat) ?? "PNG"
                         
                         // Find the index of the selected format and select it
                         if let index = formatPopup.itemTitles.firstIndex(of: selectedFormat) {
@@ -183,7 +209,7 @@ class FileSaver: @unchecked Sendable {
                     case .text, .rtf:
                         defaultName = generateDefaultName(base: DefaultNames.text)
                         formatPopup.addItems(withTitles: TextFormat.allCases.map { $0.displayName })
-                        selectedFormat = defaults.string(forKey: "defaultTextFormat") ?? "TXT"
+                        selectedFormat = selectedSaveFormat?.uppercased() ?? defaults.string(forKey: UserDefaultsKeys.defaultTextFormat) ?? "TXT"
                         
                         // Find the index of the selected format and select it
                         if let index = formatPopup.itemTitles.firstIndex(of: selectedFormat) {
@@ -232,9 +258,12 @@ class FileSaver: @unchecked Sendable {
                                 do {
                                     let selectedFormat = formatPopup.titleOfSelectedItem?.lowercased() ?? ""
                                     let compress = compressionCheckbox.state == .on
+                                    let previewEnabled = previewCheckbox.state == .on
                                     
                                     // Update compression preference
                                     self.defaults.set(compress, forKey: "compressFiles")
+                                    self.defaults.set(previewEnabled, forKey: UserDefaultsKeys.previewBeforeSave)
+                                    let contentToPreview = contentCopy
                                     
                                     // Ensure correct extension
                                     var finalURL = savePanel.url!
@@ -242,14 +271,47 @@ class FileSaver: @unchecked Sendable {
                                         finalURL = finalURL.deletingPathExtension().appendingPathExtension(selectedFormat)
                                     }
                                     
+                                    // Check if preview is enabled
+                                    if previewEnabled {
+                                        do {
+                                            // Create temp file
+                                            let tempDir = self.defaults.string(forKey: UserDefaultsKeys.tempFileLocation) ?? NSTemporaryDirectory()
+                                            let tempURL = URL(fileURLWithPath: tempDir)
+                                                .appendingPathComponent(UUID().uuidString)
+                                                .appendingPathExtension(selectedFormat)
+                                            
+                                            // First save content to temp location
+                                            let tempSavedURL = try await self.saveContent(
+                                                contentToPreview,
+                                                format: selectedFormat,
+                                                destination: tempURL,
+                                                compress: compress
+                                            )
+                                            
+                                            // Now preview the temp file with both URLs
+                                            try await self.previewContent(contentToPreview,
+                                                                        format: selectedFormat,
+                                                                        tempURL: tempSavedURL,
+                                                                        finalURL: finalURL)
+                                            
+                                            // Clean up temp file after preview is done
+                                            try? FileManager.default.removeItem(at: tempURL)
+                                        } catch {
+                                            print("Preview failed: \(error.localizedDescription)")
+                                        }
+                                    }
+                                    
+                                    // Save to final location
                                     let savedURL = try await self.saveContent(
                                         contentCopy,
                                         format: selectedFormat,
                                         destination: finalURL,
                                         compress: compress
                                     )
+                                    print("File saved successfully to: \(savedURL.path)")
                                     continuation.resume(returning: savedURL)
                                 } catch {
+                                    print("Save failed: \(error.localizedDescription)")
                                     continuation.resume(throwing: error)
                                 }
                             }
@@ -261,85 +323,62 @@ class FileSaver: @unchecked Sendable {
             }
         }
         
-    func saveDirectly(_ content: ClipboardContent, format: String) async throws -> URL {
-        print("Attempting to save directly with format: \(format)")
+    func saveDirectly(_ content: ClipboardContent, format: String? = nil) async throws -> URL {
+        print("Attempting to save directly")
         
-        // Check if default save location exists
-        guard let defaultSaveLocationData = defaults.data(forKey: UserDefaultsKeys.customSaveLocation) else {
-            print("No default save location found in UserDefaults")
-            // Attempt to select save location if not set
-            try await selectSaveLocation()
-            throw FileSavingError.accessDenied
+        // Format determination stays the same
+        let selectedFormat: String
+        if let format = format {
+            selectedFormat = format
+        } else {
+            selectedFormat = switch content {
+            case .image:
+                defaults.string(forKey: UserDefaultsKeys.defaultImageFormat)?.lowercased() ?? "png"
+            case .text, .rtf:
+                defaults.string(forKey: UserDefaultsKeys.defaultTextFormat)?.lowercased() ?? "txt"
+            case .pdf:
+                "pdf"
+            case .file, .multiple:
+                "zip"
+            case .empty:
+                throw FileSavingError.invalidData
+            }
         }
         
+        // Determine save location
+        let saveLocation: URL
+        if defaults.bool(forKey: UserDefaultsKeys.useFinderWindow),
+           let finderURL = getActiveFinderWindowPath() {
+            // Active tab setting is ON and we found an active window
+            print("Using active Finder window location: \(finderURL.path)")
+            saveLocation = finderURL
+        } else {
+            // Active tab setting is OFF or no active window found
+            // Instead of trying to resolve bookmark data first, directly use AppConstants.getSaveLocation()
+            saveLocation = AppConstants.getSaveLocation()
+            print("Using default save location: \(saveLocation.path)")
+        }
+        
+        // Generate filename and create destination URL
+        let filename = generateDefaultName(for: content, format: selectedFormat)
+        let destination = saveLocation.appendingPathComponent(filename)
+        
+        // Get compression preference
+        let compress = defaults.bool(forKey: UserDefaultsKeys.compressFiles)
+        
+        // Save the content
         do {
-            // Use URL bookmark resolution instead of NSKeyedUnarchiver
-            var isStale = false
-            let savedLocation = try URL(
-                resolvingBookmarkData: defaultSaveLocationData,
-                options: .withSecurityScope,
-                relativeTo: nil,
-                bookmarkDataIsStale: &isStale
-            )
-            
-            // Start accessing security-scoped resource
-            guard savedLocation.startAccessingSecurityScopedResource() else {
-                print("Failed to access security-scoped resource")
-                throw FileSavingError.accessDenied
-            }
-            
-            // Ensure we stop accessing the resource
-            defer {
-                savedLocation.stopAccessingSecurityScopedResource()
-            }
-            
-            // Verify save location is accessible
-            let fileManager = FileManager.default
-            var isDirectory: ObjCBool = false
-            guard fileManager.fileExists(atPath: savedLocation.path, isDirectory: &isDirectory),
-                  isDirectory.boolValue else {
-                print("Save location does not exist or is not a directory")
-                throw FileSavingError.accessDenied
-            }
-            
-            // Check write permissions
-            guard fileManager.isWritableFile(atPath: savedLocation.path) else {
-                print("No write permissions for save location")
-                throw FileSavingError.accessDenied
-            }
-            
-            // Recreate bookmark if stale
-            if isStale {
-                print("Bookmark is stale, recreating...")
-                let newBookmarkData = try savedLocation.bookmarkData(options: .withSecurityScope)
-                defaults.set(newBookmarkData, forKey: UserDefaultsKeys.customSaveLocation)
-            }
-            
-            // Generate filename with proper extension
-            let filename = generateDefaultName(for: content, format: format.lowercased())
-            let destination = savedLocation.appendingPathComponent(filename)
-            
-            // Get compression preference
-            let compress = defaults.bool(forKey: UserDefaultsKeys.compressFiles)
-            
-            // Attempt to save content
-            return try await saveContent(
+            let savedURL = try await saveContent(
                 content,
-                format: format.lowercased(),
+                format: selectedFormat,
                 destination: destination,
                 compress: compress
             )
+            print("File saved successfully to: \(savedURL.path)")
+            return savedURL
         } catch {
-            print("Save directly failed: \(error.localizedDescription)")
-            
-            // Detailed error logging
-            if let nsError = error as NSError? {
-                print("Detailed error - Domain: \(nsError.domain), Code: \(nsError.code)")
-            }
-            
-            // Attempt to select save location if access is denied
-            try await selectSaveLocation()
-            throw FileSavingError.accessDenied
+            print("Direct save failed: \(error.localizedDescription)")
+            throw error
         }
     }
 
@@ -369,7 +408,135 @@ class FileSaver: @unchecked Sendable {
         }
     }
     
+
     
+    @MainActor
+    private func previewContent(_ content: ClipboardContent, format: String, tempURL: URL, finalURL: URL) async throws {
+        enum PreviewType: @unchecked Sendable {
+            case image, pdf, text, rtf, other
+        }
+    
+        
+        let previewType: PreviewType = {
+            switch content {
+            case .image: return .image
+            case .pdf: return .pdf
+            case .text: return .text
+            case .rtf: return .rtf
+            default: return .other
+            }
+        }()
+        
+
+        try await withCheckedThrowingContinuation { continuation in
+            Task.detached {
+                let script: String
+                switch previewType {
+                case .image, .pdf:
+                    script = """
+                    tell application "Preview"
+                        open POSIX file "\(tempURL.path)"
+                        activate
+                        
+                        tell application "System Events"
+                            tell process "Preview"
+                                set saved to false
+                                repeat until saved
+                                    try
+                                        if ((get modifiers) contains command down and (get name of key) is "s") then
+                                            -- Prevent default save by cancelling it
+                                            key code 53  -- Escape key
+                                            -- Move the edited temp file to final destination
+                                            do shell script "mv '\(tempURL.path)' '\(finalURL.path)'"
+                                            close window 1
+                                            set saved to true
+                                            return true
+                                        end if
+                                    on error
+                                        return false
+                                    end try
+                                end repeat
+                            end tell
+                        end tell
+                    end tell
+                    """
+             case .text, .rtf:
+                    // For both Preview and TextEdit:
+                    script = """
+                    tell application "TextEdit"
+                        open POSIX file "\(tempURL.path)"
+                        activate
+                        
+                        tell application "System Events"
+                            tell process "TextEdit"
+                                set saved to false
+                                repeat until saved
+                                    try
+                                        if ((get modifiers) contains command down and (get name of key) is "s") then
+                                            -- Prevent default save by cancelling it
+                                            key code 53  -- Escape key
+                                            -- Move the edited temp file to final destination
+                                            do shell script "mv '\(tempURL.path)' '\(finalURL.path)'"
+                                            close window 1
+                                            set saved to true
+                                            return true
+                                        end if
+                                    on error
+                                        return false
+                                    end try
+                                end repeat
+                            end tell
+                        end tell
+                    end tell
+                    """
+                case .other:
+                    continuation.resume(returning: ())
+                    return
+                }
+                
+                do {
+                    if let appleScript = NSAppleScript(source: script) {
+                        var scriptError: NSDictionary?
+                        let result = appleScript.executeAndReturnError(&scriptError)
+                        
+                        if scriptError != nil {
+                            throw FileSavingError.previewFailed
+                        }
+                        
+                        // Check if user wanted to save (returned true) or cancelled (returned false)
+                        // In the result handling part of previewContent:
+                        if result.booleanValue {
+                            // Close the application
+                            let closeScript = """
+                            tell application "\(previewType == .text || previewType == .rtf ? "TextEdit" : "Preview")"
+                                quit
+                            end tell
+                            """
+                            let _ = NSAppleScript(source: closeScript)?.executeAndReturnError(nil)
+                            
+                            // Delete the temporary file
+                            try FileManager.default.removeItem(at: tempURL)  // Changed from finalSavePath to tempURL
+                            
+                            await MainActor.run {
+                                continuation.resume(returning: ())
+                            }
+                        } else {
+                            await MainActor.run {
+                                continuation.resume(throwing: FileSavingError.userCancelled)
+                            }
+                        }
+                        
+                    } else {
+                        throw FileSavingError.previewFailed
+                    }
+                } catch {
+                    await MainActor.run {
+                        continuation.resume(throwing: error)
+                    }
+                }
+            }
+        }
+    }
     
     // MARK: - Private Methods
     
@@ -380,18 +547,19 @@ class FileSaver: @unchecked Sendable {
     }
     
     private func getActiveFinderWindowPath() -> URL? {
-        guard NSWorkspace.shared.frontmostApplication?.bundleIdentifier == "com.apple.finder" else {
-            print("Finder is not frontmost application")
-            return nil
-        }
-
         let script = """
         tell application "Finder"
-            if (count of windows) > 0 then
+            if exists window 1 then
                 try
-                    get POSIX path of (target of front window as alias)
-                on error
-                    get POSIX path of (desktop as alias)
+                    if exists (folder of window 1) then
+                        return POSIX path of (folder of window 1 as alias)
+                    else if exists (target of window 1) then
+                        if class of (target of window 1) is folder then
+                            return POSIX path of (target of window 1 as alias)
+                        else
+                            return POSIX path of (container of (target of window 1) as alias)
+                        end if
+                    end if
                 end try
             end if
         end tell
@@ -401,13 +569,26 @@ class FileSaver: @unchecked Sendable {
         var error: NSDictionary?
         
         if let pathString = appleScript?.executeAndReturnError(&error).stringValue {
-            print("Found Finder path: \(pathString)")
-            return URL(fileURLWithPath: pathString, isDirectory: true)
-        } else if let error = error {
-            print("AppleScript error: \(error)")
+            let url = URL(fileURLWithPath: pathString)
+            print("Found active Finder window path: \(url.path)")
+            return url
         }
         
+        if let error = error {
+            print("Error getting Finder path: \(error)")
+        }
         return nil
+    }
+    
+    private func setupPreviewObservers() -> Publishers.Filter<NotificationCenter.Publisher> {
+        return NotificationCenter.default.publisher(for: NSWorkspace.didDeactivateApplicationNotification)
+            .filter { notification in
+                guard let appInfo = notification.userInfo?[NSWorkspace.applicationUserInfoKey] as? NSRunningApplication else {
+                    return false
+                }
+                let previewAppNames = ["com.apple.Preview", "com.apple.TextEdit"]
+                return previewAppNames.contains(appInfo.bundleIdentifier ?? "")
+            }
     }
     
     
