@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle">
+    <channel>
+        <title>NeoPaste Updates</title>
+        <description>Most recent changes with links to updates.</description>
+        <language>en</language>
+        <item>
+            <title>Version 1.4.0</title>
+            <description><![CDATA[
+                <h2>Changes in version 1.4.0:</h2>
+                <ul>
+                    <li>Your update notes here</li>
+                </ul>
+            ]]>
+            </description>
+            <pubDate>Wed, 16 Jan 2025 12:00:00 +0000</pubDate>
+            <enclosure 
+                url="https://github.com/ariomoniri/neopaste/releases/download/v1.4.0/neopaste.zip"
+                sparkle:version="140"
+                sparkle:shortVersionString="1.4.0"
+                sparkle:minimumSystemVersion="14.0"
+                type="application/octet-stream"
+            />
+        </item>
+    </channel>
+</rss>
