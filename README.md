@@ -46,8 +46,13 @@ Get ready for the next evolution of clipboard magic! 🪄✨
 ### 🔥 What's New?
 - 🖼️ **Quick Preview Mode**: Edit text or images before pasting!
 - 📋 **Menu Bar Clipboard Preview**: Instantly preview your clipboard content right from the menu bar.
-- ⚙️ **Enhanced Preferences**: Sleek UI/UX with a new **Help Tab** 🆘 and **Updates Tab** 🔄.
+- 📝 **Paste with Preview and Edit**: Review and modify content before saving.
+- ⚙️ **Enhanced Preferences**: Sleek UI/UX with a new **Help Tab** 🆘 and **Permissions Tab** 🔒.
+- 🔄 **Recent Files**: Access recent files directly from the menu bar for quick reopening.
+- ⚙️ **Settings Update**: Choose whether shortcuts or menu bar save buttons use direct saving or a save dialogue.
 - 📥 **Auto-Update**: Seamless updates from GitHub releases.
+- 🐛 **Clipboard Bug Fix**: Resolved issue with clipboard not capturing new content.
+- 🆕 **Enhanced UI/UX**: More intuitive and user-friendly interface.
 
 Stay tuned for the official release! 💻🌟 
 
