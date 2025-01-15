@@ -15,18 +15,15 @@
             </description>
             <pubDate>Wed, 16 Jan 2025 12:00:00 +0000</pubDate>
             <enclosure 
-                url="https://github.com/ariomoniri/neopaste/releases/download/v1.4.0/neopaste.zip"    "edit here"
+                url="https://github.com/ariomoniri/neopaste/releases/download/v1.4.0/neopaste.zip"
                 sparkle:version="140"
                 sparkle:shortVersionString="1.4.0"
                 sparkle:minimumSystemVersion="14.0"
-                length="PUT_ZIP_SIZE_HERE"                  "edit here"
-                type="application/octet-stream"           
-                sparkle:edSignature="PASTE_SIGNATURE_HERE"       "edit here"
+                length="1503754"
+                sparkle:edSignature="by2joZQWYQM3gpc9K5rE4p7RWSUhE6c5gAD4rpTBmOc2JI9OIl3nvsSfQSbBe7Cg3wPiZdnQQXdSC4lt3JgxAA=="
+                type="application/octet-stream"
 
             />
         </item>
     </channel>
 </rss> 
-
-
-/opt/homebrew/Caskroom/sparkle/2.6.4/bin/sign_update /path/to/neopaste.zip
