@@ -36,6 +36,12 @@
 - **v2.1.0**
   - Enhance **Advanced Save Options** with structured file organization and customizable naming templates.
   - Add support for bulk pasting operations.
+  - Append clipboard content to another file or replace an existing file.
+  - Add **Batch Mode** to monitor clipboard and save content as you copy.
+  - Add support for the following formats: SVG, JPG, CSV, URL, PDF, DIF, SLK, EMF, BMP, PCX, TGA, TIF, and file droplist.
+  - Add **Command Line Tools** to perform paste operations.
+  - Add the option to paste as a file when right-clicking in Finder.
+  - Create automatic PDF files from clipboard content.
 
 ---
 
