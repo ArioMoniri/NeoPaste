@@ -11,9 +11,15 @@ All notable changes to this project will be documented here.
 - **Edit Before Pasting**: Users can now edit text or images in the clipboard prior to pasting, providing greater flexibility.
 - **Help Tab in Preferences**: Enhanced accessibility with links to GitHub resources directly within the app.
 - **Updates Tab**: Automatically checks for new releases on GitHub and provides an option to update the app seamlessly.
+- **Recent Files Section**: Easily access and open recent files from the menu bar.
+- **Paste with Preview and Edit Functionality**: Review and modify content before saving it.
+- **Settings Options for Saving**: Choose whether to use shortcuts or menu bar save buttons for direct saving or saving with a dialogue.
+- **Permissions Tab in Settings**: Monitor and manage app permissions directly.
 
 ### Improved
 - **Enhanced Preferences Page UI/UX**: Redesigned for better navigation and user experience, making it easier to access settings and features.
+- **UI/UX Enhancements Across the App**: Provides a more intuitive and user-friendly interface.
+- **Clipboard Content Capture Fix**: Resolved issue with clipboard not capturing new content.
 
 ---
 
