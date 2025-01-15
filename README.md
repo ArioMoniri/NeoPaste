@@ -20,7 +20,7 @@
 
 
 <p align="center">
-  <a href="https://raw.githubusercontent.com/ArioMoniri/NeoPaste/a0470cc095b245bab615e3ad05b4176b4e9866ae/NeoPaste%201.3.dmg">
+  <a href="https://raw.githubusercontent.com/ArioMoniri/NeoPaste/de98ae1048baa79cc9d371d343f34e539ff516a7/NeoPaste%201.4.dmg">
     <img src="https://raw.githubusercontent.com/ArioMoniri/NeoPaste/4bc184bdf3735f9bf58ce12736cc87458434949d/Sleek%20Glossy%20macOS.png" alt="NeoPaste Icon" width="400"/>
   </a>
 </p>
@@ -29,7 +29,7 @@
 
 <div align="center">
 
-[![Download NeoPaste](https://img.shields.io/badge/Download-NeoPaste-blue?style=for-the-badge&logo=apple)](https://raw.githubusercontent.com/ArioMoniri/NeoPaste/a0470cc095b245bab615e3ad05b4176b4e9866ae/NeoPaste%201.3.dmg)
+[![Download NeoPaste](https://img.shields.io/badge/Download-NeoPaste-blue?style=for-the-badge&logo=apple)](https://raw.githubusercontent.com/ArioMoniri/NeoPaste/de98ae1048baa79cc9d371d343f34e539ff516a7/NeoPaste%201.4.dmg)
 
 </div>
 <h1 align="center" style="font-size: 2em;"> Save Code Snippets & Images Instantly on macOS</h1>
@@ -150,7 +150,7 @@ You can help translate this application into your own language! This is an essen
 
 Get the latest version of NeoPaste directly:
 
-[![Download NeoPaste](https://img.shields.io/badge/Download-NeoPaste-blue?style=for-the-badge&logo=apple)](https://raw.githubusercontent.com/ArioMoniri/NeoPaste/a0470cc095b245bab615e3ad05b4176b4e9866ae/NeoPaste%201.3.dmg)
+[![Download NeoPaste](https://img.shields.io/badge/Download-NeoPaste-blue?style=for-the-badge&logo=apple)](https://raw.githubusercontent.com/ArioMoniri/NeoPaste/de98ae1048baa79cc9d371d343f34e539ff516a7/NeoPaste%201.4.dmg)
 
 ### Installation Steps:
 1. Click the button above to download the `.dmg` file.
