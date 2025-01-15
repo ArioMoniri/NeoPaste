@@ -1,19 +1,3 @@
-//
-// Copyright 2025 Ariorad Moniri
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-//     http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
-//
-
 import Foundation
 import HotKey
 import AppKit
@@ -132,17 +116,19 @@ class ShortcutManager: ObservableObject {
         do {
             let content = ClipboardMonitor.shared.currentContent
             
-            // Validate content type based on shortcut
-            switch (key, content) {
-            case (.saveClipboard, _):
-                // Content type matches shortcut or it's the general save shortcut
-                break
-            }
+            // Check save style preference
+            let shortcutStyle = defaults.string(forKey: UserDefaultsKeys.shortcutSaveStyle) ?? "dialog"
+            let savedURL = try await shortcutStyle == "direct" ?
+                FileSaver.shared.saveDirectly(content) :
+                FileSaver.shared.saveWithDialog(content)
             
-            let savedURL = try await FileSaver.shared.saveWithDialog(content)
+            // Add this line to update recent files
+            MenuBarManager.shared.updateRecentFiles(with: savedURL.path)
+
             print("Content saved successfully at: \(savedURL.path)")
             await showNotification(title: "Success", message: "Content saved successfully")
             NotificationCenter.default.post(name: .saveCompleted, object: nil)
+            
         } catch FileSavingError.userCancelled {
             print("Save operation cancelled by user")
         } catch {
