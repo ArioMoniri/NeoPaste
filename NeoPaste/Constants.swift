@@ -1,19 +1,3 @@
-//
-// Copyright 2025 Ariorad Moniri
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-//     http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
-//
-
 import Foundation
 import UniformTypeIdentifiers
 import SwiftUI
@@ -21,8 +5,13 @@ import SwiftUI
 // MARK: - App Configuration
 enum AppConstants {
     static let appName = "NeoPaste"
-    static let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0"
+    static let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.4"
     static let appBuild = Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "1"
+    static let welcomeMessage = "👋 Welcome to NeoPaste! Please copy something first to paste as file 📋"
+    static func isValidVersionFormat(_ version: String) -> Bool {
+        let pattern = "^v?\\d+\\.\\d+\\.\\d+$"
+        return version.range(of: pattern, options: .regularExpression) != nil
+    }
     
     // Window sizes
     static let preferencesWindowSize = CGSize(width: 500, height: 400)
@@ -49,6 +38,11 @@ enum UserDefaultsKeys {
     static let autoStartEnabled = "autoStartEnabled"
     static let compressFiles = "compressFiles"
     static let useFinderWindow = "useFinderWindow"
+    static let previewBeforeSave = "previewBeforeSave"
+    static let tempFileLocation = "tempFileLocation"
+    static let menuBarSaveStyle = "menuBarSaveStyle"  // "direct" or "dialog"
+    static let shortcutSaveStyle = "shortcutSaveStyle"// "direct" or "dialog"
+    static let selectedSaveFormat = "selectedSaveFormat"
 }
 
 // MARK: - Notification Names
