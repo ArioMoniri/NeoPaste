@@ -52,7 +52,7 @@ Get ready for the next evolution of clipboard magic! 🪄✨
 - 🐛 **Clipboard Bug Fix**: Resolved issue with clipboard not capturing new content.
 - 🆕 **Enhanced UI/UX**: More intuitive and user-friendly interface.
 
-Stay tuned for the official release! 💻🌟 
+
 
 ---
 
