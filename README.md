@@ -10,9 +10,7 @@
 ![GitHub contributors](https://img.shields.io/github/contributors/ArioMoniri/NeoPaste)
 ![GitHub](https://img.shields.io/badge/Localized-Available-brightgreen)
 ![Website](https://img.shields.io/website?url=https://neopaste.replit.app/)
-
-
-
+[![Roadmap](https://img.shields.io/badge/Roadmap-View%20Here-brightgreen)](https://github.com/ArioMoniri/NeoPaste/blob/main/roadmap.md)
 </div>
 
 
