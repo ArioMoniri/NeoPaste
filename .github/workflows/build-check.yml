@@ -35,9 +35,10 @@ jobs:
     - name: Check Xcode embedded SDKs
       run: xcodebuild -showsdks
     - name: Show buildable schemes
-      run: xcodebuild -list
+      run: xcodebuild -list -project NeoPaste.xcodeproj
+    
     - name: Show eligible build destinations for ${{ matrix.scheme }}
-      run: xcodebuild -showdestinations -scheme ${{ matrix.scheme }}
+      run: xcodebuild -showdestinations -scheme ${{ matrix.scheme }} -project NeoPaste.xcodeproj
     - uses: mxcl/xcodebuild@v3
       with:
         platform: ${{ matrix.platform }}
