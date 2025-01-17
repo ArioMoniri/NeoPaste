@@ -27,7 +27,8 @@
 
 <div align="center">
 
-[![Download NeoPaste](https://img.shields.io/badge/Download-NeoPaste-blue?style=for-the-badge&logo=apple)](https://raw.githubusercontent.com/ArioMoniri/NeoPaste/de98ae1048baa79cc9d371d343f34e539ff516a7/NeoPaste%201.4.dmg)
+
+<a href="https://raw.githubusercontent.com/ArioMoniri/NeoPaste/de98ae1048baa79cc9d371d343f34e539ff516a7/NeoPaste%201.4.dmg" target="_self"><img width="200" src="https://www.adviksoft.com/blog/wp-content/uploads/2023/09/editor_download_mac.png" /></a>
 
 </div>
 <h1 align="center" style="font-size: 2em;"> Save Code Snippets & Images Instantly on macOS</h1>
