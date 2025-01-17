@@ -335,6 +335,12 @@ Have ideas for new features or improvements? I'd love to hear from you!
 Apache License 2.0 - see [LICENSE](LICENSE) for details.
 Please also check the [LICENSE.md](LICENSE.md) file.
 
+## 🎉 Acknowledgments
+
+- **You**: For being awesome and Downloading NeoPaste!
+- **SwiftUI**: For making everything magic easy.
+
+
 ---
 <p align="center">
   Made with ❤️ by <a href="https://github.com/ArioMoniri">Ario Moniri</a>
