@@ -28,6 +28,11 @@ jobs:
       uses: maxim-lobanov/setup-xcode@v1.2.3
       with:
         xcode-version: latest-stable
+    - name: Install Apple Certificates
+      uses: apple-actions/import-codesign-certs@v2
+      with:
+        p12-file-base64: ${{ secrets.P12_FILE_BASE64 }}
+        p12-password: ${{ secrets.P12_PASSWORD }}
     - name: Code Checkout
       uses: actions/checkout@v2
     - name: Check Xcodebuild version
