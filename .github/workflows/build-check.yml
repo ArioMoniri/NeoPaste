@@ -21,7 +21,7 @@ jobs:
         platform:
           - macOS
         scheme:
-          - neopaste
+          - NeoPaste
     runs-on: macos-latest
     steps:
     - name: Switch Xcode to latest-stable
