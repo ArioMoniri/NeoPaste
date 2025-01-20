@@ -107,7 +107,7 @@ Thank you for your continued support! ❤️ We hope you enjoy the latest featur
 Watch NeoPaste in action:
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ArioMoniri/NeoPaste/8f3580cfc29d290c0961350aba88dac8388d1b43/Screen%20Recording%20Jan%207%202025.gif" alt="NeoPaste Demo" width="600"/>
+  <img src="https://raw.githubusercontent.com/ArioMoniri/NeoPaste/e3eea3dd190c7f39e4bf5e6c0cf7ec1cd07d0b7e/Screen%20Recording%20Jan%2020%202025%20(2).gif" alt="NeoPaste Demo" width="900"/>
 </p>
 
 ## ✨ Completely Free!
