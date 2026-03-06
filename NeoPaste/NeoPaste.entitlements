@@ -45,9 +45,6 @@
         <string>/Documents/</string>
     </array>
     
-    <!-- Development -->
-    <key>com.apple.developer.aps-environment</key>
-    <string>development</string>
     
 
     <key>com.apple.security.automation.apple-events</key>

@@ -183,34 +183,36 @@ class ClipboardMonitor: ObservableObject {
     func saveCurrentContent() async throws {
         print("Attempting to save current content: \(self.currentContent)")
         
+        let savedURL: URL
+        
         switch self.currentContent {
         case .image(let image):
             logger.debug("Saving image...")
-            _ = try await fileSaver.saveWithDialog(.image(image))
+            savedURL = try await fileSaver.saveWithDialog(.image(image))
             
         case .text(let text):
             logger.debug("Saving text...")
-            _ = try await fileSaver.saveWithDialog(.text(text))
+            savedURL = try await fileSaver.saveWithDialog(.text(text))
             
         case .rtf(let data):
             logger.debug("Converting RTF to text...")
             if let attrString = try? NSAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.rtf], documentAttributes: nil) {
-                _ = try await fileSaver.saveWithDialog(.text(attrString.string))
+                savedURL = try await fileSaver.saveWithDialog(.text(attrString.string))
             } else {
                 throw ClipboardError.conversionFailed
             }
             
         case .pdf(let data):
             logger.debug("Saving PDF...")
-            _ = try await fileSaver.saveWithDialog(.pdf(data))
+            savedURL = try await fileSaver.saveWithDialog(.pdf(data))
             
         case .file(let url):
             logger.debug("Saving file...")
-            _ = try await fileSaver.saveWithDialog(.file(url))
+            savedURL = try await fileSaver.saveWithDialog(.file(url))
             
         case .multiple(let urls):
             logger.debug("Saving multiple files...")
-            _ = try await fileSaver.saveWithDialog(.multiple(urls))
+            savedURL = try await fileSaver.saveWithDialog(.multiple(urls))
             
         case .empty:
             logger.error("Error: Clipboard is empty")
@@ -218,7 +220,9 @@ class ClipboardMonitor: ObservableObject {
         }
         
         logger.info("Save completed successfully")
-        NotificationCenter.default.post(name: .saveCompleted, object: nil)
+        let fileName = savedURL.lastPathComponent
+        let filePath = savedURL.deletingLastPathComponent().path
+        NotificationCenter.default.post(name: .saveCompleted, object: nil, userInfo: ["fileName": fileName, "filePath": filePath, "fullFilePath": savedURL.path])
     }
     
     // MARK: - Private Methods

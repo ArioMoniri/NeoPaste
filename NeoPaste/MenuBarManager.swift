@@ -122,9 +122,9 @@ class MenuBarManager: NSObject, ObservableObject {
         
         NotificationCenter.default.publisher(for: .saveCompleted)
             .receive(on: RunLoop.main)
-            .sink { [weak self] _ in
+            .sink { [weak self] notification in
                 Task { @MainActor [weak self] in
-                    await self?.showSaveCompletedNotification()
+                    await self?.showSaveCompletedNotification(notification)
                 }
             }
             .store(in: &cancellables)
@@ -280,7 +280,9 @@ class MenuBarManager: NSObject, ObservableObject {
 
                 updateRecentFiles(with: savedURL.path)
                 print("Content saved successfully at: \(savedURL.path)")
-                NotificationCenter.default.post(name: .saveCompleted, object: nil)
+                let fileName = savedURL.lastPathComponent
+                let filePath = savedURL.deletingLastPathComponent().path
+                NotificationCenter.default.post(name: .saveCompleted, object: nil, userInfo: ["fileName": fileName, "filePath": filePath, "fullFilePath": savedURL.path])
             } catch {
                 print("Failed to save: \(error.localizedDescription)")
                 await showError(error)
@@ -307,7 +309,9 @@ class MenuBarManager: NSObject, ObservableObject {
 
                 updateRecentFiles(with: savedURL.path)
                 print("Content saved successfully at: \(savedURL.path)")
-                NotificationCenter.default.post(name: .saveCompleted, object: nil)
+                let fileName = savedURL.lastPathComponent
+                let filePath = savedURL.deletingLastPathComponent().path
+                NotificationCenter.default.post(name: .saveCompleted, object: nil, userInfo: ["fileName": fileName, "filePath": filePath, "fullFilePath": savedURL.path])
             } catch {
                 print("Failed to save: \(error.localizedDescription)")
                 await showError(error)
@@ -424,10 +428,21 @@ class MenuBarManager: NSObject, ObservableObject {
     }
     
     
-    private func showSaveCompletedNotification() async {
+    private func showSaveCompletedNotification(_ notification: Notification) async {
         let content = UNMutableNotificationContent()
         content.title = "Save Completed"
-        content.body = "Content saved successfully"
+        
+        if let fileName = notification.userInfo?["fileName"] as? String,
+           let filePath = notification.userInfo?["filePath"] as? String {
+            content.body = "name: \(fileName)\npath: \(filePath)"
+            
+            if let fullFilePath = notification.userInfo?["fullFilePath"] as? String {
+                content.userInfo = ["fullFilePath": fullFilePath]
+            }
+        } else {
+            content.body = "Content saved successfully"
+        }
+        
         content.sound = .default
         
         let request = UNNotificationRequest(

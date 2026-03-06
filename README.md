@@ -124,6 +124,9 @@ NeoPaste is  **100% free and open source**! We believe in making productivity to
 - **📋 Menu Bar Quick Access**: Toggle saving directly from the menu bar for maximum convenience
 - **💻 Code & Image Support**: Perfect for saving code snippets, screenshots, and any other clipboard content as files
 - **📂 Save Anywhere**: Choose any location on your Mac to save your snippets and images
+- 🔔 **Enhanced Save Notifications**: Notifications now display the saved file name and path, making it easy to know exactly where your file was saved.
+- 📂 **Click-to-Reveal in Finder**: Click on the save notification to instantly reveal and highlight the saved file in Finder.
+
 
 ## 🛡️ Privacy & Security
 

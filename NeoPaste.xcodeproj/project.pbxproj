@@ -429,7 +429,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = "/Users/ario/Downloads/app of paster/pasterapp/NeoPaste/Info.plist";
+				INFOPLIST_FILE = NeoPaste/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = NeoPaste;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -463,7 +463,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = "/Users/ario/Downloads/app of paster/pasterapp/NeoPaste/Info.plist";
+				INFOPLIST_FILE = NeoPaste/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = NeoPaste;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";

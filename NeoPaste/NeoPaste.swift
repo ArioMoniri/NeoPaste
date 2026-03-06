@@ -129,7 +129,9 @@ struct NeoPaste: App {
             logger.debug("Starting clipboard save operation")
             let savedURL = try await FileSaver.shared.saveWithDialog(clipboardMonitor.currentContent)
             logger.info("Content saved successfully at: \(savedURL.path)")
-            NotificationCenter.default.post(name: .saveCompleted, object: nil)
+            let fileName = savedURL.lastPathComponent
+            let filePath = savedURL.deletingLastPathComponent().path
+            NotificationCenter.default.post(name: .saveCompleted, object: nil, userInfo: ["fileName": fileName, "filePath": filePath, "fullFilePath": savedURL.path])
         } catch {
             if case FileSavingError.userCancelled = error {
                 logger.debug("Save operation cancelled by user")

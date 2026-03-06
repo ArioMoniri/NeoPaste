@@ -142,36 +142,15 @@ class ShortcutManager: ObservableObject {
             MenuBarManager.shared.updateRecentFiles(with: savedURL.path)
 
             print("Content saved successfully at: \(savedURL.path)")
-            await showNotification(title: "Success", message: "Content saved successfully")
-            NotificationCenter.default.post(name: .saveCompleted, object: nil)
+            let fileName = savedURL.lastPathComponent
+            let filePath = savedURL.deletingLastPathComponent().path
+            NotificationCenter.default.post(name: .saveCompleted, object: nil, userInfo: ["fileName": fileName, "filePath": filePath, "fullFilePath": savedURL.path])
             
         } catch FileSavingError.userCancelled {
             print("Save operation cancelled by user")
         } catch {
             print("Error handling shortcut: \(error.localizedDescription)")
-            await showNotification(title: "Error", message: error.localizedDescription)
             NotificationCenter.default.post(name: .saveError, object: error)
-        }
-    }
-    
-    private func showNotification(title: String, message: String) async {
-        guard defaults.bool(forKey: UserDefaultsKeys.showNotifications) else { return }
-        
-        let content = UNMutableNotificationContent()
-        content.title = title
-        content.body = message
-        content.sound = .default
-        
-        let request = UNNotificationRequest(
-            identifier: UUID().uuidString,
-            content: content,
-            trigger: nil
-        )
-        
-        do {
-            try await notificationCenter.add(request)
-        } catch {
-            print("Failed to show notification: \(error.localizedDescription)")
         }
     }
     

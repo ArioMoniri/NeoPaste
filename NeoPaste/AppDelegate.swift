@@ -20,7 +20,7 @@ import UserNotifications
 import os.log
 
 @MainActor
-class AppDelegate: NSObject, NSApplicationDelegate {
+class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDelegate {
     // MARK: - Singleton
     static let shared: AppDelegate = {
         let instance = AppDelegate()
@@ -50,6 +50,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     // MARK: - Application Lifecycle
     func applicationDidFinishLaunching(_ notification: Notification) {
+        notificationCenter.delegate = self
+        
         Task { @MainActor in
             do {
                 // Initialize system settings
@@ -82,6 +84,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 }
             }
         }
+    }
+    
+    func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
+        return false
     }
 
     private func handlePermissionError(_ error: PermissionError) {
@@ -374,7 +380,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 let format = sender.title.replacingOccurrences(of: "Save as ", with: "").lowercased()
                 let url = try await FileSaver.shared.saveDirectly(content, format: format)
                 logger.info("Content saved successfully at: \(url.path)")
-                NotificationCenter.default.post(name: .saveCompleted, object: nil)
+                let fileName = url.lastPathComponent
+                let filePath = url.deletingLastPathComponent().path
+                NotificationCenter.default.post(name: .saveCompleted, object: nil, userInfo: ["fileName": fileName, "filePath": filePath, "fullFilePath": url.path])
             } catch {
                 // Check for file access permission errors
                 if let nsError = error as NSError?,
@@ -397,7 +405,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 let defaultFormat = content.defaultFormat
                 let url = try await FileSaver.shared.saveDirectly(content, format: defaultFormat)
                 logger.info("Content saved successfully at: \(url.path)")
-                NotificationCenter.default.post(name: .saveCompleted, object: nil)
+                let fileName = url.lastPathComponent
+                let filePath = url.deletingLastPathComponent().path
+                NotificationCenter.default.post(name: .saveCompleted, object: nil, userInfo: ["fileName": fileName, "filePath": filePath, "fullFilePath": url.path])
             } catch {
                 // Check for file access permission errors
                 if let nsError = error as NSError?,
@@ -477,5 +487,35 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         
         button.image = NSImage(systemSymbolName: symbolName, accessibilityDescription: description)
+    }
+    
+    // MARK: - UNUserNotificationCenterDelegate
+    nonisolated func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        let userInfo = response.notification.request.content.userInfo
+        
+        if let filePath = userInfo["fullFilePath"] as? String {
+            Task { @MainActor in
+                for window in NSApp.windows {
+                    window.close()
+                }
+                
+                let script = """
+                tell application "Finder"
+                    activate
+                    set theFile to POSIX file "\(filePath)"
+                    reveal theFile
+                end tell
+                """
+                if let appleScript = NSAppleScript(source: script) {
+                    var error: NSDictionary?
+                    appleScript.executeAndReturnError(&error)
+                    if let error = error {
+                        print("AppleScript error: \(error)")
+                    }
+                }
+            }
+        }
+        
+        completionHandler()
     }
 }
